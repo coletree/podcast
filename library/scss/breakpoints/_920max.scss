@@ -1,0 +1,26 @@
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+#inner-header {
+    width: 100%;
+}
+
+#inner-content {
+    width: 100%;
+}
+
+.footer #inner-footer {
+	width: 100%;
+	padding: 0 0;
+}
+
+.footer-last-widget{
+	float: left;
+}

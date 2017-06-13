@@ -1,0 +1,3059 @@
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+
+Helpful articles on Sass file organization:
+http://thesassway.com/advanced/modular-css-naming-conventions
+
+******************************************************************/
+/*********************
+IMPORTING PARTIALS
+These files are needed at the beginning so that we establish all
+our mixins, functions, and variables that we'll be using across
+the whole project.
+*********************/
+/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
+/*--------------------------------------------------------------
+Reset
+--------------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\000037}}
+* {
+  background-image: url(about:blank);
+  background-attachment: fixed; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000316}}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000327}}
+html {
+  overflow-y: scroll;
+  /* Keeps page centered in all browsers regardless of content height */
+  text-rendering: optimizelegibility;
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */ }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000343}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000346}}
+ol, ul {
+  list-style: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000349}}
+table {
+  /* tables still need 'cellspacing="0"' in the markup */
+  border-collapse: separate;
+  border-spacing: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000353}}
+caption, th, td {
+  font-weight: normal;
+  text-align: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000358}}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: ""; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000361}}
+blockquote, q {
+  quotes: "" ""; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000364}}
+a:focus {
+  outline: thin dotted; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000368}}
+a:hover,
+a:active {
+  outline: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000371}}
+a img {
+  border: 0; }
+
+/*---------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000377}}
+.g_line {
+  margin: 0 8px;
+  color: #ddd; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000379}}
+.g_r4 {
+  margin-right: 4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000380}}
+.g_l4 {
+  margin-left: 4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000381}}
+.g_r8 {
+  margin-right: 8px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000382}}
+.g_l8 {
+  margin-left: 8px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000383}}
+.g_r16 {
+  margin-right: 16px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000384}}
+.g_l16 {
+  margin-left: 16px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000386}}
+.g_t4 {
+  margin-top: 4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000387}}
+.g_b4 {
+  margin-bottom: 4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000388}}
+.g_t8 {
+  margin-top: 8px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000389}}
+.g_b8 {
+  margin-bottom: 8px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000390}}
+.g_t16 {
+  margin-top: 16px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000391}}
+.g_b16 {
+  margin-bottom: 16px; }
+
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000396}}
+.float_left {
+  float: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000397}}
+.float_right {
+  float: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\0000398}}
+.clear {
+  clear: both;
+  line-height: 0px;
+  font-size: 0px;
+  height: 1px;
+  margin-top: -1px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003100}}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003108}}
+* html .clearfix {
+  zoom: 1; }
+
+/* IE6 */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003109}}
+*:first-child + html .clearfix {
+  zoom: 1; }
+
+/* IE7 */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003111}}
+.hidden {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003114}}
+.alignLeft {
+  text-align: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003115}}
+.alignRight {
+  text-align: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003116}}
+.alignCenter {
+  text-align: center; }
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003139}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003149}}
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003158}}
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003169}}
+[hidden],
+template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003183}}
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003193}}
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003205}}
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003213}}
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003222}}
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003234}}
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003244}}
+b,
+strong,
+.strong {
+  font-weight: bold; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003253}}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/*
+ * proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens)
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003263}}
+p {
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
+
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003274}}
+pre {
+  margin: 0; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003285}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003294}}
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003302}}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003310}}
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003315}}
+small, .small {
+  font-size: 75%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003324}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003331}}
+sup {
+  top: -0.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003335}}
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+  Lists
+========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003351}}
+dl,
+dd,
+menu,
+ol,
+ul {
+  margin: 0; }
+
+/*
+ * Addresses paddings set differently in IE6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003360}}
+menu {
+  padding: 0 0 0 40px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003365}}
+ol,
+ul {
+  padding: 0;
+  list-style-type: none; }
+
+/*
+ * Corrects list images handled incorrectly in IE7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003375}}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* ==========================================================================
+  Embedded content
+========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003388}}
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003396}}
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003408}}
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003420}}
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003431}}
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003445}}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003457}}
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003469}}
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003484}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003494}}
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003504}}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003515}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003528}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003537}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003547}}
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003560}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003567}}
+.image-replacement,
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003574}}
+.clearfix, .cf, .comment-respond {
+  zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003576}}
+  .clearfix:before, .clearfix:after, .cf:before, .comment-respond:before, .cf:after, .comment-respond:after {
+    content: "";
+    display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003577}}
+  .clearfix:after, .cf:after, .comment-respond:after {
+    clear: both; }
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_normalize\.scss}line{font-family:\00003584}}
+span.amp {
+  font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", serif !important;
+  font-style: italic; }
+
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/******************************************************************
+Site Name: weblog.coletree.com
+Author: coletree
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
+******************************************************************/
+/*********************
+FONT FACE (IN YOUR FACE)
+*********************/
+/*  To embed your own fonts, use this syntax
+  and place your fonts inside the
+  library/fonts folder. For more information
+  on embedding fonts, go to:
+  http://www.fontsquirrel.com/
+  Be sure to remove the comment brackets.
+*/
+/*  @font-face {
+      font-family: 'Font Name';
+      src: url('library/fonts/font-name.eot');
+      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+*/
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+/*
+ i imported this one in the functions file so bones would look sweet.
+ don't forget to remove it for your site.
+*/
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_typography\.scss}line{font-family:\0000364}}
+p {
+  -ms-word-break: break-all;
+  -ms-word-wrap: break-all;
+  word-break: break-word;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Sass Functions
+
+You can do a lot of really cool things in Sass. Functions help you
+make repeated actions a lot easier. They are really similar to mixins,
+but can be used for so much more.
+
+Anyway, keep them all in here so it's easier to find when you're
+looking for one.
+
+For more info on functions, go here:
+http://sass-lang.com/documentation/Sass/Script/Functions.html
+
+******************************************************************/
+/*********************
+COLOR FUNCTIONS
+These are helpful when you're working
+with shadows and such things. It's essentially
+a quicker way to write RGBA.
+
+Example:
+box-shadow: 0 0 4px black(0.3);
+compiles to:
+box-shadow: 0 0 4px rgba(0,0,0,0.3);
+*********************/
+/*********************
+RESPONSIVE HELPER FUNCTION
+If you're creating a responsive site, then
+you've probably already read
+Responsive Web Design: http://www.abookapart.com/products/responsive-web-design
+
+Here's a nice little helper function for calculating
+target / context
+as mentioned in that book.
+
+Example:
+width: cp(650px, 1000px);
+or
+width: calc-percent(650px, 1000px);
+both compile to:
+width: 65%;
+*********************/
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: Mixins Stylesheet
+
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+
+******************************************************************/
+/*********************
+Link Style
+*********************/
+/*********************
+Round Conner 
+*********************/
+/*********************
+Post Pic Shadow 
+*********************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*@import "partials/grid";*/
+/*********************
+IMPORTING MODULES
+Modules are reusable blocks or elements we use throughout the project.
+We can break them up as much as we want or just keep them all in one.
+I mean, you can do whatever you want. The world is your oyster. Unless
+you hate oysters, then the world is your peanut butter & jelly sandwich.
+*********************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Alert Styles
+
+If you want to use these alerts in your design, you can. If not,
+you can just remove this stylesheet.
+
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_alerts\.scss}line{font-family:\0000315}}
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_alerts\.scss}line{font-family:\0000321}}
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_alerts\.scss}line{font-family:\0000327}}
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_alerts\.scss}line{font-family:\0000333}}
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_alerts\.scss}line{font-family:\0000339}}
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Button Styles
+
+Buttons are a pretty important part of your site's style, so it's
+important to have a consistent baseline for them. Use this stylesheet
+to create all kinds of buttons.
+
+Helpful Links:
+http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
+
+******************************************************************/
+/*********************
+BUTTON DEFAULTS
+We're gonna use a placeholder selector here
+so we can use common styles. We then use this
+to load up the defaults in all our buttons.
+
+Here's a quick video to show how it works:
+http://www.youtube.com/watch?v=hwdVpKiJzac
+
+*********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_buttons\.scss}line{font-family:\0000327}}
+.blue-btn, .comment-reply-link, #submit {
+  display: inline-block;
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9em;
+  font-size: 34px;
+  line-height: 34px;
+  font-weight: normal;
+  padding: 0 24px;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  -webkit-transition: background-color 0.14s ease-in-out;
+  transition: background-color 0.14s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_buttons\.scss}line{font-family:\0000344}}
+  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+    color: white;
+    text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_buttons\.scss}line{font-family:\0000350}}
+  .blue-btn:active, .comment-reply-link:active, #submit:active {
+    top: 1px; }
+
+/*
+An example button.
+You can use this example if you want. Just replace all the variables
+and it will create a button dependant on those variables.
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_buttons\.scss}line{font-family:\0000361}}
+.blue-btn, .comment-reply-link, #submit {
+  background-color: #2980b9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_buttons\.scss}line{font-family:\0000366}}
+  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+    background-color: #2574a8; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_buttons\.scss}line{font-family:\0000370}}
+  .blue-btn:active, .comment-reply-link:active, #submit:active {
+    background-color: #2472a4; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Form Styles
+
+We put all the form and button styles in here to setup a consistent
+look. If we need to customize them, we can do this in the main
+stylesheets and just override them. Easy Peasy.
+
+You're gonna see a few data-uri thingies down there. If you're not
+sure what they are, check this link out:
+http://css-tricks.com/data-uris/
+If you want to create your own, use this helpful link:
+http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/
+
+******************************************************************/
+/*********************
+INPUTS
+*********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\0000340}}
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea,
+.field {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 12px;
+  margin-bottom: 14px;
+  font-size: 1em;
+  color: #605854;
+  border-radius: 3px;
+  vertical-align: middle;
+  box-shadow: none;
+  border: 0;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #999999;
+  -webkit-transition: background-color 0.24s ease-in-out;
+  transition: background-color 0.24s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\0000360}}
+  input[type="text"]:focus, input[type="text"]:active,
+  input[type="password"]:focus,
+  input[type="password"]:active,
+  input[type="datetime"]:focus,
+  input[type="datetime"]:active,
+  input[type="datetime-local"]:focus,
+  input[type="datetime-local"]:active,
+  input[type="date"]:focus,
+  input[type="date"]:active,
+  input[type="month"]:focus,
+  input[type="month"]:active,
+  input[type="time"]:focus,
+  input[type="time"]:active,
+  input[type="week"]:focus,
+  input[type="week"]:active,
+  input[type="number"]:focus,
+  input[type="number"]:active,
+  input[type="email"]:focus,
+  input[type="email"]:active,
+  input[type="url"]:focus,
+  input[type="url"]:active,
+  input[type="search"]:focus,
+  input[type="search"]:active,
+  input[type="tel"]:focus,
+  input[type="tel"]:active,
+  input[type="color"]:focus,
+  input[type="color"]:active,
+  select:focus,
+  select:active,
+  textarea:focus,
+  textarea:active,
+  .field:focus,
+  .field:active {
+    background-color: #a3a3a3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\0000366}}
+  input[type="text"].error, input[type="text"].is-invalid,
+  input[type="password"].error,
+  input[type="password"].is-invalid,
+  input[type="datetime"].error,
+  input[type="datetime"].is-invalid,
+  input[type="datetime-local"].error,
+  input[type="datetime-local"].is-invalid,
+  input[type="date"].error,
+  input[type="date"].is-invalid,
+  input[type="month"].error,
+  input[type="month"].is-invalid,
+  input[type="time"].error,
+  input[type="time"].is-invalid,
+  input[type="week"].error,
+  input[type="week"].is-invalid,
+  input[type="number"].error,
+  input[type="number"].is-invalid,
+  input[type="email"].error,
+  input[type="email"].is-invalid,
+  input[type="url"].error,
+  input[type="url"].is-invalid,
+  input[type="search"].error,
+  input[type="search"].is-invalid,
+  input[type="tel"].error,
+  input[type="tel"].is-invalid,
+  input[type="color"].error,
+  input[type="color"].is-invalid,
+  select.error,
+  select.is-invalid,
+  textarea.error,
+  textarea.is-invalid,
+  .field.error,
+  .field.is-invalid {
+    color: #fbe3e4;
+    border-color: #fbe3e4;
+    background-color: white;
+    background-position: 99% center;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDREQkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDREQ0YwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ3ODRGRkE2RjA0QTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERBRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+U8iT5wAAAedJREFUeNqk1U9I02Ecx/HtV3aIFAc1hcRDUoGXRAq0oNLA2CrsEFmHbikZu0iQYIFGYAiegkCpLipBxPpDEBMUzB0EhSG2LhG7hMR2GviPgUTvB57Bw8P3+U23B16HPX8+e/b8nt93wezZSMCnhXETF3AcB5BDCnH8Dq98ExcGHcFn8Ah3cdDni+fxnPDv9oAnTB7CKu6VCFXtChZy56LxUjt+jfuB8toSOth9wd7xWAWhqrUjYR/FRTwWJm+iIPT/w7bQf5ljiZnBg45dtKFX6H+LU8gIY8OEV6vgTkStwXWE8BPTGDHGPqNPz2mCfSOOYkA99TvCt1bhGPL68zMcwmncMuape10jrI+q4BbHi/FLn31S9z2x5tRhTc+1W506ipM+T3oRD4X+8+qtc4SqFvL0z/Fr14S+Szjis8bz9Lvvaq8cwS/wwGfdlqfPSWqTiFlX77o13u9Ym1PBs8JAytpRoy44X9Ft9E/gvbA+rYKn8NcaaMVc8UHgBw4b9/iqUQZ6hOAJFbyDcUflmsEX4a6+wTtHGfhAIUqa1U29Zc2BytouThD8x6xuN5CtMPi2CrXLZkZf/HyZoRFCP7n+QVR4PV7uI/AjGghN7OU/r1ilnqILtfpNC+o6vIFljBKYlhb/F2AAgaBsWR5wRiIAAAAASUVORK5CYII=);
+    outline-color: #fbe3e4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\0000378}}
+  input[type="text"].success, input[type="text"].is-valid,
+  input[type="password"].success,
+  input[type="password"].is-valid,
+  input[type="datetime"].success,
+  input[type="datetime"].is-valid,
+  input[type="datetime-local"].success,
+  input[type="datetime-local"].is-valid,
+  input[type="date"].success,
+  input[type="date"].is-valid,
+  input[type="month"].success,
+  input[type="month"].is-valid,
+  input[type="time"].success,
+  input[type="time"].is-valid,
+  input[type="week"].success,
+  input[type="week"].is-valid,
+  input[type="number"].success,
+  input[type="number"].is-valid,
+  input[type="email"].success,
+  input[type="email"].is-valid,
+  input[type="url"].success,
+  input[type="url"].is-valid,
+  input[type="search"].success,
+  input[type="search"].is-valid,
+  input[type="tel"].success,
+  input[type="tel"].is-valid,
+  input[type="color"].success,
+  input[type="color"].is-valid,
+  select.success,
+  select.is-valid,
+  textarea.success,
+  textarea.is-valid,
+  .field.success,
+  .field.is-valid {
+    color: #e6efc2;
+    border-color: #e6efc2;
+    background-color: white;
+    background-position: 99% center;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDRERkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDRFMEYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0MzQ0NERERjA0QjExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERFRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+7olkTQAAAfhJREFUeNqklU9oE0EUhzdroWjw0tBeWlDxkEaIp55TsCU9VKIgCrHBelA8CQ1Kr1WPbZrQ3gqtQqvGqxpQc2jBk6BIIaAGD4qNCKURpDSKiPi98gLDsJt//uBjsztvfnk7895sIPAw6/joGMThFJyAXn2+A+9gA57/TaY/eU0OeBgfhGm4DiGnsb7DAszxBz/NAdcKjMJLuNWCqagHbsscN5+L+hmH4QkMOe1L5jzFfNA2PgT34ajTuY7AGuZB0/hmh5m+gS0r8xv1zRvg+gGCHZiOwnF4DP3iB3sQkYxPd2C6CWfhB9Xwlus5+K1j4jXuaq3a+gM1H9OPcAa+7q9lPidZJqHbiIm7Wg22rsEI7FrPSzAMX/T+ADyAKSsu7Fr1KplehLvwCs5DvfBf65p+MypqRbO1FXK9utH4/QKuaqYTsG3E3INJv00Q46px3+XxanJ/Ute2/vqP4FKDza2KcdljIKdnhS0xXYULTaqmLMZFn8FFSFtvt6x70ExFCS5oUXspq2ssa7oEl1swFa+CGFdgtkHgPDyDKy02zyxNU6lXRUZb1EuHYayNNs+Yh5B0WQo+/8fpJnNTZFuzz2OpjoQ2QruSOQlMy35fEGmEGMxY9e1brxobw7TkWA1h6xfckUPb+JhGoE/Hpfvew7qUld/H9J8AAwDpw3WYrxcZ3QAAAABJRU5ErkJggg==);
+    outline-color: #e6efc2; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\0000390}}
+  input[type="text"][disabled], input[type="text"].is-disabled,
+  input[type="password"][disabled],
+  input[type="password"].is-disabled,
+  input[type="datetime"][disabled],
+  input[type="datetime"].is-disabled,
+  input[type="datetime-local"][disabled],
+  input[type="datetime-local"].is-disabled,
+  input[type="date"][disabled],
+  input[type="date"].is-disabled,
+  input[type="month"][disabled],
+  input[type="month"].is-disabled,
+  input[type="time"][disabled],
+  input[type="time"].is-disabled,
+  input[type="week"][disabled],
+  input[type="week"].is-disabled,
+  input[type="number"][disabled],
+  input[type="number"].is-disabled,
+  input[type="email"][disabled],
+  input[type="email"].is-disabled,
+  input[type="url"][disabled],
+  input[type="url"].is-disabled,
+  input[type="search"][disabled],
+  input[type="search"].is-disabled,
+  input[type="tel"][disabled],
+  input[type="tel"].is-disabled,
+  input[type="color"][disabled],
+  input[type="color"].is-disabled,
+  select[disabled],
+  select.is-disabled,
+  textarea[disabled],
+  textarea.is-disabled,
+  .field[disabled],
+  .field.is-disabled {
+    cursor: not-allowed;
+    border-color: #cfcfcf;
+    opacity: 0.6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\0000396}}
+    input[type="text"][disabled]:focus, input[type="text"][disabled]:active, input[type="text"].is-disabled:focus, input[type="text"].is-disabled:active,
+    input[type="password"][disabled]:focus,
+    input[type="password"][disabled]:active,
+    input[type="password"].is-disabled:focus,
+    input[type="password"].is-disabled:active,
+    input[type="datetime"][disabled]:focus,
+    input[type="datetime"][disabled]:active,
+    input[type="datetime"].is-disabled:focus,
+    input[type="datetime"].is-disabled:active,
+    input[type="datetime-local"][disabled]:focus,
+    input[type="datetime-local"][disabled]:active,
+    input[type="datetime-local"].is-disabled:focus,
+    input[type="datetime-local"].is-disabled:active,
+    input[type="date"][disabled]:focus,
+    input[type="date"][disabled]:active,
+    input[type="date"].is-disabled:focus,
+    input[type="date"].is-disabled:active,
+    input[type="month"][disabled]:focus,
+    input[type="month"][disabled]:active,
+    input[type="month"].is-disabled:focus,
+    input[type="month"].is-disabled:active,
+    input[type="time"][disabled]:focus,
+    input[type="time"][disabled]:active,
+    input[type="time"].is-disabled:focus,
+    input[type="time"].is-disabled:active,
+    input[type="week"][disabled]:focus,
+    input[type="week"][disabled]:active,
+    input[type="week"].is-disabled:focus,
+    input[type="week"].is-disabled:active,
+    input[type="number"][disabled]:focus,
+    input[type="number"][disabled]:active,
+    input[type="number"].is-disabled:focus,
+    input[type="number"].is-disabled:active,
+    input[type="email"][disabled]:focus,
+    input[type="email"][disabled]:active,
+    input[type="email"].is-disabled:focus,
+    input[type="email"].is-disabled:active,
+    input[type="url"][disabled]:focus,
+    input[type="url"][disabled]:active,
+    input[type="url"].is-disabled:focus,
+    input[type="url"].is-disabled:active,
+    input[type="search"][disabled]:focus,
+    input[type="search"][disabled]:active,
+    input[type="search"].is-disabled:focus,
+    input[type="search"].is-disabled:active,
+    input[type="tel"][disabled]:focus,
+    input[type="tel"][disabled]:active,
+    input[type="tel"].is-disabled:focus,
+    input[type="tel"].is-disabled:active,
+    input[type="color"][disabled]:focus,
+    input[type="color"][disabled]:active,
+    input[type="color"].is-disabled:focus,
+    input[type="color"].is-disabled:active,
+    select[disabled]:focus,
+    select[disabled]:active,
+    select.is-disabled:focus,
+    select.is-disabled:active,
+    textarea[disabled]:focus,
+    textarea[disabled]:active,
+    textarea.is-disabled:focus,
+    textarea.is-disabled:active,
+    .field[disabled]:focus,
+    .field[disabled]:active,
+    .field.is-disabled:focus,
+    .field.is-disabled:active {
+      background-color: #d5edf8; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\00003105}}
+textarea {
+  max-width: 100%;
+  min-height: 60px;
+  line-height: 1.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\00003112}}
+select {
+  -webkit-appearance: none;
+  /* 1 */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHCAYAAADXhRcnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEOEZCMjYxMEYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEOEZCMjYxMUYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ4RkIyNjBFRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ4RkIyNjBGRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Vxkp9gAAAI9JREFUeNpidHFxucHAwKAOxE+AmJmBMPgLxDJAfJMFSKwD4kqoAClgA+P///8ZXF1dPaCGcBKh6QcQB+3evXs7WDMIAA2QB1I7gFgDj0aQFz2BGh+AOEwwUaDAQyBlCMR7cGjcC5KHaQQBuM3IAOiKTiBVhiTUDdRUhq4Oq2aoAelAahIQ5wM1zsCmBiDAADhYMJXVZ9u9AAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-position: 97.5% center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\00003121}}
+input#s {
+  display: inline-block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/modules\/_forms\.scss}line{font-family:\00003126}}
+input#searchsubmit {
+  padding: 8px 16px;
+  vertical-align: top; }
+
+/*********************
+BASE (DESKTOP) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*********************/
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+/*********************
+Global Value
+*********************/
+/**{
+	-moz-transition: 	all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: 		all 0.3s ease-in;
+    transition: 		all 0.3s ease-in;
+}*/
+/*********************
+LINK STYLES
+*********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\0000329}}
+a, a:visited {
+  color: #453d31;
+  text-decoration: none;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\0000335}}
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    color: #27231c; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\0000345}}
+  a:link, a:visited:link {
+    /*
+    this highlights links on iPhones/iPads.
+    so it basically works like the :hover selector
+    for mobile devices.
+    */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+
+/*********************
+GENERAL STYLES
+*********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\0000361}}
+body {
+  font-family: "PingHei","Lucida Grande","Lucida Sans Unicode","STHeiti","Helvetica","Arial","Verdana","sans-serif";
+  font-size: 100%;
+  color: #605854;
+  -webkit-font-smoothing: antialiased; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\0000368}}
+.dashline {
+  height: 1px;
+  background: url(../images/dashline.png) center center;
+  margin-bottom: 60px; }
+
+/*********************
+HEADER STYLES
+*********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\0000380}}
+.header {
+  width: 100%;
+  height: 80px;
+  background: none repeat scroll 0 0 white;
+  border-top: 4px solid #7ba80f;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  box-shadow: 0px 1px 2px rgba(40, 40, 40, 0.06);
+  -o-box-shadow: 0px 1px 2px rgba(40, 40, 40, 0.06);
+  -moz-box-shadow: 0px 1px 2px rgba(40, 40, 40, 0.06);
+  -webkit-box-shadow: 0px 1px 2px rgba(40, 40, 40, 0.06); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\0000395}}
+#inner-header {
+  width: 960px;
+  margin: 0 auto;
+  position: relative; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003101}}
+.site-branding {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003109}}
+.site-title {
+  margin: 0 auto;
+  overflow: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003114}}
+.site-title a {
+  display: inline-block;
+  width: 180px;
+  height: 60px;
+  background: url(../images/logo.png) no-repeat 0 -7px;
+  text-decoration: none;
+  line-height: 99em;
+  margin-left: 8px;
+  overflow: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003125}}
+#menuSwitchWrap {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  z-index: 9998;
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003138}}
+#menuSwitch,
+#menuSwitch:hover,
+#menuSwitch:active,
+#menuSwitch:link,
+#menuSwitch:visited,
+#menuSwitch:focus {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.6;
+  outline: none; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003161}}
+#navMenuWrap {
+  float: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003165}}
+.nav {
+  margin: 0;
+  padding: 28px 0 0 0;
+  /* end .menu li */
+  /* highlight current page */
+  /* end current highlighters */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003169}}
+  .nav li {
+    float: left;
+    display: inline-block;
+    /*
+    so you really have to rethink your dropdowns for mobile.
+    you don't want to have it expand too much because the
+    screen is so small. How you manage your menu should
+    depend on the project. Here's some great info on it:
+    http://www.alistapart.com/articles/organizing-mobile/
+    */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003174}}
+    .nav li a {
+      color: #6f5f58;
+      font-size: 17px;
+      line-height: 20px;
+      text-decoration: none;
+      display: inline-block;
+      height: 20px;
+      padding: 0 24px;
+      border-right: 1px dotted #c8c2b9;
+      overflow: hidden;
+      /*
+      remember this is for mobile ONLY, so there's no need
+      to even declare hover styles here, you can do it in
+      the style.scss file where it's relevant. We want to
+      keep this file as small as possible!
+      */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003191}}
+      .nav li a:hover, .nav li a:focus {
+        color: #6f5f58;
+        text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003199}}
+    .nav li:last-child {
+      border: 0 none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003213}}
+    .nav li ul.sub-menu li a,
+    .nav li ul.children li a {
+      padding-left: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003233}}
+  .nav:last-child {
+    border: 0 none; }
+
+/* end .nav */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003251}}
+#content {
+  width: 100%;
+  padding: 80px 0 0;
+  text-align: center;
+  background: url(../images/bg_main.png) repeat; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003258}}
+#inner-content {
+  width: 920px;
+  max-width: 920px;
+  min-width: 320px;
+  margin: 0 auto;
+  text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003267}}
+.hentry {
+  margin-bottom: 120px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003277}}
+  .hentry .entry-title,
+  .hentry .entry-title a {
+    color: #C95B28;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_mixins\.scss}line{font-family:\0000333}}
+    .hentry .entry-title:hover,
+    .hentry .entry-title a:hover {
+      color: #E25A1B; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003284}}
+  .hentry .entry-title {
+    margin-bottom: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003288}}
+  .hentry .entry-meta-wrap {
+    color: #e9e9e9;
+    font-size: 12px;
+    text-align: center;
+    /*background:url(../images/dashline.png) no-repeat center center;*/ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003294}}
+    .hentry .entry-meta-wrap a {
+      color: #aaa; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003296}}
+      .hentry .entry-meta-wrap a:hover {
+        color: #F6512C; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003301}}
+    .hentry .entry-meta-wrap .entry-meta {
+      /*background: url(../images/bg_main.png) repeat;*/ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003307}}
+    .hentry .entry-meta-wrap .entry-meta-date,
+    .hentry .entry-meta-wrap .entry-meta-comm,
+    .hentry .entry-meta-wrap .entry-meta-edit {
+      padding: 0 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003313}}
+  .hentry footer {
+    color: #ddd;
+    font-size: 20px;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003318}}
+    .hentry footer .article-footer-wrap {
+      /*background: url(../images/bg_main.png) repeat;*/
+      padding: 0 16px; }
+
+/* end .hentry */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003331}}
+.single-title,
+.page-title,
+.entry-title {
+  margin: 0; }
+
+/* want to style individual post classes? Booya! */
+/* post by id (i.e. post-3) */
+/* general post style */
+/* general article on a page style */
+/* general style on an attatchment */
+/* sticky post style */
+/* hentry class */
+/* style by category (i.e. category-videos) */
+/* style by tag (i.e. tag-news) */
+/* entry content */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003357}}
+.entry-content {
+  color: #332A23;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+  padding: 0 60px;
+  /*
+  image alignment on a screen this size may be
+  a bit difficult. It's set to start aligning
+  and floating images at the next breakpoint,
+  but it's up to you. Feel free to change it up.
+  */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003364}}
+  .entry-content p {
+    margin: 0 0 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003367}}
+    .entry-content p a {
+      color: #57890B; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_mixins\.scss}line{font-family:\0000348}}
+      .entry-content p a:hover {
+        color: #57890B;
+        border-bottom: solid 1px #bbc6b1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003371}}
+    .entry-content p img {
+      box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+      -o-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+      -moz-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+      -webkit-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003377}}
+  .entry-content table {
+    width: 100%;
+    border: 1px solid #999999;
+    margin-bottom: 1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003382}}
+    .entry-content table caption {
+      margin: 0 0 7px;
+      font-size: 0.75em;
+      color: #9fa6b4;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003391}}
+  .entry-content tr {
+    border-bottom: 1px solid #999999; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003394}}
+    .entry-content tr:nth-child(even) {
+      background-color: #f8f9fa; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003399}}
+  .entry-content td {
+    padding: 7px;
+    border-right: 1px solid #999999; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003403}}
+    .entry-content td:last-child {
+      border-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003408}}
+  .entry-content th {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #999999;
+    border-right: 1px solid #999999; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003413}}
+    .entry-content th:last-child {
+      border-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003418}}
+  .entry-content blockquote {
+    margin: 0 0 30px;
+    padding: 20px 30px;
+    border-left: 3px solid #bfbab5;
+    font-size: 16px;
+    font-style: italic;
+    color: #776e64;
+    background: rgba(255, 255, 255, 0.6); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003429}}
+    .entry-content blockquote p {
+      margin-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003435}}
+  .entry-content li {
+    list-style: disc inside none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003437}}
+  .entry-content .mejs-container {
+    margin-bottom: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003439}}
+  .entry-content img {
+    margin: 0 0 30px 0;
+    max-width: 100%;
+    height: auto;
+    vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003452}}
+  .entry-content .alignleft, .entry-content img.alignleft {
+    display: inline;
+    float: left;
+    margin-top: 0;
+    margin-right: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003453}}
+  .entry-content .alignright, .entry-content img.alignright {
+    display: inline;
+    float: right;
+    margin-top: 0;
+    margin-left: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003454}}
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003460}}
+  .entry-content .size-auto,
+  .entry-content .size-full,
+  .entry-content .size-large,
+  .entry-content .size-medium,
+  .entry-content .size-thumbnail {
+    max-width: 100%;
+    height: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003465}}
+  .entry-content img.size-full, .entry-content img.size-large {
+    _width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003467}}
+  .entry-content pre {
+    background: #333333;
+    color: #f8f9fa;
+    font-size: 0.9em;
+    padding: 1.5em;
+    margin: 0 0 1.5em;
+    border-radius: 3px; }
+
+/* end .entry-content */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003478}}
+.wp-caption {
+  max-width: 100%;
+  background: #fefefe;
+  padding: 8px;
+  margin-bottom: 30px;
+  /* images inside wp-caption */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003485}}
+  .wp-caption img {
+    max-width: 100%;
+    margin-bottom: 0;
+    width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003491}}
+  .wp-caption p.wp-caption-text {
+    color: #aaa;
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 8px 0 4px;
+    text-align: center; }
+
+/* end .wp-caption */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003503}}
+.tags {
+  margin: 0; }
+
+/******************************************************************
+Single Volume Style
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003515}}
+.hentry.single-volume {
+  width: 760px;
+  background: #fff;
+  margin: 0 auto 40px;
+  box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+  -o-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+  -moz-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+  -webkit-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003525}}
+  .hentry.single-volume .article-featurePic .feature-image {
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003527}}
+    .hentry.single-volume .article-featurePic .feature-image img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003537}}
+  .hentry.single-volume .volume-content {
+    color: #605854;
+    font-size: 18px;
+    line-height: 2em;
+    text-align: left;
+    padding: 40px 50px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003545}}
+    .hentry.single-volume .volume-content .article-header {
+      padding-bottom: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003549}}
+      .hentry.single-volume .volume-content .article-header .volume-title {
+        font-size: 22px;
+        color: #413529;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        overflow: hidden;
+        margin-bottom: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003558}}
+        .hentry.single-volume .volume-content .article-header .volume-title span {
+          font-size: 24px;
+          font-weight: bold;
+          margin-right: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003566}}
+      .hentry.single-volume .volume-content .article-header .volume-subTitle {
+        font-size: 14px;
+        color: #c3c3c3;
+        text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003571}}
+        .hentry.single-volume .volume-content .article-header .volume-subTitle .line {
+          font-size: 12px;
+          font-weight: normal;
+          color: #eee; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003580}}
+    .hentry.single-volume .volume-content p {
+      margin-bottom: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003586}}
+  .hentry.single-volume .powerpress_player {
+    margin-top: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003590}}
+    .hentry.single-volume .powerpress_player audio {
+      width: 100%;
+      height: 36px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003597}}
+  .hentry.single-volume .volume-playlist {
+    color: #605854;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+    padding: 20px 50px 40px;
+    background: #fdfdfd;
+    border-top: solid 1px #f9f9f9;
+    border-bottom: solid 1px #f6f4ef; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003607}}
+    .hentry.single-volume .volume-playlist h4 {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003615}}
+    .hentry.single-volume .volume-playlist ul li {
+      font-size: 14px;
+      background: #f6f8fa;
+      margin-bottom: 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003620}}
+      .hentry.single-volume .volume-playlist ul li a {
+        color: #666;
+        display: block;
+        line-height: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003626}}
+      .hentry.single-volume .volume-playlist ul li span.no {
+        color: #666;
+        display: inline-block;
+        width: 40px;
+        text-align: center;
+        border-right: solid 2px white;
+        margin-right: 16px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003640}}
+  .hentry.single-volume .entry-meta-wrap {
+    color: #e9e9e9;
+    font-size: 12px;
+    text-align: center;
+    /*background:url(../images/dashline.png) no-repeat center center;*/ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003646}}
+    .hentry.single-volume .entry-meta-wrap a {
+      color: #aaa; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003648}}
+      .hentry.single-volume .entry-meta-wrap a:hover {
+        color: #F6512C; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003655}}
+    .hentry.single-volume .entry-meta-wrap .entry-meta-date,
+    .hentry.single-volume .entry-meta-wrap .entry-meta-comm,
+    .hentry.single-volume .entry-meta-wrap .entry-meta-edit {
+      padding: 0 8px; }
+
+/* end .hentry */
+/******************************************************************
+Share jiathis Style & fuli
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003675}}
+.article-footer {
+  color: #ddd;
+  font-size: 14px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003680}}
+#single-article-footer .left {
+  float: left;
+  font-size: 14px;
+  padding: 16px 0 16px 20px;
+  line-height: 32px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003686}}
+  #single-article-footer .left a {
+    color: #959a9e; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003691}}
+#single-article-footer .right {
+  float: right;
+  border-left: solid 1px #f6f4ef; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003697}}
+#single-article-footer .jiathis_style {
+  text-align: right;
+  padding: 16px 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003702}}
+#single-article-footer .jiathis.jiathis_separator.jtico.jtico_jiathis {
+  display: none !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003707}}
+#single-article-footer .jiathis_style .button,
+#single-article-footer .jiathis_style .jiathis_txt {
+  float: none;
+  display: inline-block;
+  font-size: 14px !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003718}}
+#single-article-footer .jiathis_button_weixin,
+#single-article-footer .jiathis_button_tsina,
+#single-article-footer .jiathis_button_douban,
+#single-article-footer .jiathis_button_twitter,
+#single-article-footer .jiathis_button_googleplus {
+  display: inline-block;
+  padding: 0 4px !important;
+  margin: 0 2px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003724}}
+#single-article-footer .jiathis_style .jtico {
+  cursor: pointer;
+  display: inline-block !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding-left: 0 !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003732}}
+#single-article-footer .jiathis_button_weixin .jtico_weixin {
+  background: url(../images/icon_32.png) no-repeat;
+  background-position: 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003735}}
+  #single-article-footer .jiathis_button_weixin .jtico_weixin:hover {
+    background-position: -32px 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003740}}
+#single-article-footer .jiathis_button_tsina .jtico_tsina {
+  background: url(../images/icon_32.png) no-repeat;
+  background-position: 0 -32px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003743}}
+  #single-article-footer .jiathis_button_tsina .jtico_tsina:hover {
+    background-position: -32px -32px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003748}}
+#single-article-footer .jiathis_button_douban .jtico_douban {
+  background: url(../images/icon_32.png) no-repeat;
+  background-position: 0 -64px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003751}}
+  #single-article-footer .jiathis_button_douban .jtico_douban:hover {
+    background-position: -32px -64px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003756}}
+#single-article-footer .jiathis_button_twitter .jtico_twitter {
+  background: url(../images/icon_32.png) no-repeat;
+  background-position: 0 -96px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003759}}
+  #single-article-footer .jiathis_button_twitter .jtico_twitter:hover {
+    background-position: -32px -96px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003764}}
+#single-article-footer .jiathis_button_googleplus .jtico_googleplus {
+  background: url(../images/icon_32.png) no-repeat;
+  background-position: 0 -128px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003767}}
+  #single-article-footer .jiathis_button_googleplus .jtico_googleplus:hover {
+    background-position: -32px -128px; }
+
+/******************************************************************
+Relate Post
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003778}}
+#related_volume {
+  background: none repeat scroll 0 0 white;
+  margin: 0 auto 60px;
+  padding: 15px;
+  width: 730px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003785}}
+  #related_volume ul {
+    text-align: left;
+    border: solid 1px #f6f4ef; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003790}}
+  #related_volume h4 {
+    color: #605854;
+    padding: 16px 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003795}}
+  #related_volume li {
+    position: relative;
+    padding: 20px 30px 20px 180px;
+    border: solid 1px #f6f4ef;
+    border-width: 1px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003801}}
+    #related_volume li a {
+      display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003805}}
+    #related_volume li .feature-image {
+      position: absolute;
+      left: 30px;
+      top: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003811}}
+      #related_volume li .feature-image img {
+        width: 120px;
+        height: 80px;
+        vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003819}}
+    #related_volume li .info {
+      padding: 10px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003823}}
+      #related_volume li .info h5 {
+        color: #302a1a;
+        font-size: 16px;
+        font-weight: 400%;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003832}}
+      #related_volume li .info .text {
+        color: #999;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden; }
+
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003851}}
+.pagination,
+.wp-prev-next {
+  padding: 40px 0;
+  margin-bottom: 80px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003855}}
+.pagination {
+  text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003858}}
+  .pagination ul {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0;
+    clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003865}}
+  .pagination li {
+    padding: 0;
+    margin-right: 4px;
+    background-color: white;
+    border-radius: 2px;
+    float: left;
+    display: inline;
+    overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003875}}
+  .pagination a, .pagination span {
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+    line-height: 1em;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0.75em;
+    min-width: 1em;
+    display: block;
+    color: #605854; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003887}}
+    .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
+      background-color: #605854;
+      color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003893}}
+  .pagination .current {
+    cursor: default;
+    color: #C95B28; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003897}}
+    .pagination .current:hover, .pagination .current:focus {
+      color: #C95B28;
+      background-color: white; }
+
+/* end .bones_page_navi */
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+/* h3 comment title */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003911}}
+#comments-title {
+  padding: 0.75em;
+  margin: 0;
+  border-top: 1px solid #f8f9fa; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003917}}
+.commentlist {
+  margin: 0;
+  list-style-type: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003922}}
+.comment {
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  padding: 1.5em;
+  border-bottom: 1px solid #f8f9fa;
+  /* vcard */
+  /* end .commentlist .vcard */
+  /* end children */
+  /* general comment classes */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003929}}
+  .comment .comment-author {
+    padding: 7px;
+    border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003935}}
+  .comment .vcard {
+    margin-left: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003938}}
+    .comment .vcard cite.fn {
+      font-weight: 700;
+      font-style: normal; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003946}}
+    .comment .vcard time {
+      display: block;
+      font-size: 0.9em;
+      font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003951}}
+      .comment .vcard time a {
+        color: #9fa6b4;
+        text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003955}}
+        .comment .vcard time a:hover {
+          text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003965}}
+    .comment .vcard .avatar {
+      position: absolute;
+      left: 16px;
+      border-radius: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003973}}
+  .comment:last-child {
+    margin-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003977}}
+  .comment .children {
+    margin: 0;
+    /* variations */
+    /* change number for different depth */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003995}}
+  .comment[class*=depth-] {
+    margin-top: 1.1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\00003999}}
+  .comment.depth-1 {
+    margin-left: 0;
+    margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031004}}
+  .comment:not(.depth-1) {
+    margin-top: 0;
+    margin-left: 7px;
+    padding: 7px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031012}}
+  .comment.odd {
+    background-color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031015}}
+  .comment.even {
+    background: #f8f9fa; }
+
+/* comment content */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031023}}
+.comment_content p {
+  margin: 0.7335em 0 1.5em;
+  font-size: 1em;
+  line-height: 1.5em; }
+
+/* end .commentlist .comment_content */
+/* comment reply link */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031032}}
+.comment-reply-link {
+  font-size: 0.9em;
+  float: right; }
+
+/* end .commentlist .comment-reply-link */
+/* edit comment link */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031044}}
+.comment-edit-link {
+  font-style: italic;
+  margin: 0 7px;
+  text-decoration: none;
+  font-size: 0.9em; }
+
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031056}}
+.comment-respond {
+  padding: 1.5em;
+  border-top: 1px solid #f8f9fa; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031062}}
+#reply-title {
+  margin: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031066}}
+.logged-in-as {
+  color: #9fa6b4;
+  font-style: italic;
+  margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031071}}
+  .logged-in-as a {
+    color: #605854; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031076}}
+.comment-form-comment {
+  margin: 1.5em 0 0.75em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031080}}
+.form-allowed-tags {
+  padding: 1.5em;
+  background-color: #f8f9fa;
+  font-size: 0.9em; }
+
+/* comment submit button */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031087}}
+#submit {
+  float: right;
+  font-size: 1em; }
+
+/* comment form title */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031094}}
+#comment-form-title {
+  margin: 0 0 1.1em; }
+
+/* logged in comments */
+/* allowed tags */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031102}}
+#allowed_tags {
+  margin: 1.5em 10px 0.7335em 0; }
+
+/* no comments */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031107}}
+.nocomments {
+  margin: 0 20px 1.1em; }
+
+/******************************************************************
+DuoShuo STYLES
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031115}}
+.single-volume-comment {
+  width: 730px;
+  padding: 15px 15px 30px;
+  margin: 0 auto 60px;
+  background: #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031122}}
+.single-volume-comment #ds-reset {
+  padding: 0 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031126}}
+.single-volume-comment #ds-thread #ds-reset .ds-replybox {
+  margin: 0 0;
+  padding: 0 0 0 70px !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031131}}
+.single-volume-comment #ds-thread #ds-reset li.ds-tab {
+  margin: 0 0 0 6px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031135}}
+.single-volume-comment #ds-thread #ds-reset .ds-replybox .ds-avatar {
+  left: 4px !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031139}}
+.single-volume-comment #ds-thread #ds-reset .ds-comments {
+  border-bottom: 1px solid #eeeeee; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031143}}
+.single-volume-comment #ds-thread #ds-reset .ds-comments-info {
+  margin-top: 0;
+  padding: 16px 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031148}}
+.single-volume-comment #ds-thread #ds-reset .ds-post-self {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031153}}
+.single-volume-comment #ds-thread #ds-reset ul {
+  text-align: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031157}}
+.single-volume-comment #ds-thread #ds-reset li.ds-post {
+  border-top: 1px solid #eeeeee; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031161}}
+.single-volume-comment #ds-thread #ds-reset .ds-sort {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031165}}
+.single-volume-comment #ds-thread #ds-reset .ds-comment-body {
+  text-align: left;
+  padding-left: 70px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031170}}
+.single-volume-comment .ds-powered-by {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031174}}
+.single-volume-comment #ds-reset li.ds-post-placeholder {
+  display: none; }
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031189}}
+.widgettitle {
+  font-size: 18px;
+  padding: 6px 0;
+  border-bottom: 1px solid #dddddd; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031195}}
+.widget {
+  text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031201}}
+  .widget ul li {
+    padding: 6px 0;
+    /* deep nesting */ }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031225}}
+#sidebar1 {
+  padding: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031229}}
+  #sidebar1 .widget {
+    color: #706359;
+    text-align: center;
+    font-size: 16px;
+    font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031235}}
+    #sidebar1 .widget a {
+      color: #706359; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031238}}
+      #sidebar1 .widget a:hover {
+        color: #57890B; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031246}}
+  #sidebar1 .testimonials-widget-testimonial cite,
+  #sidebar1 .testimonials-widget-testimonial div.credit {
+    display: block;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031252}}
+  #sidebar1 .testimonials-widget-testimonial .open-quote,
+  #sidebar1 .testimonials-widget-testimonial .close-quote {
+    color: #ccc;
+    font-size: 36px;
+    padding: 0 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031261}}
+#sidebar2 {
+  padding: 0 20px; }
+
+/*********************
+FOOTER STYLES
+*********************/
+/*
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav a bit more in-depth. Remember to keep it simple because you'll have to
+override these styles for the desktop view.
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031281}}
+.footer {
+  clear: both;
+  padding: 60px 0 0;
+  background: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031286}}
+  .footer #inner-footer {
+    width: 840px;
+    padding: 0 40px;
+    margin: 0 auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031295}}
+#footerWidget {
+  padding: 0 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031299}}
+  #footerWidget .widgetTitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #605854;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 0 10px;
+    margin-bottom: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031308}}
+  #footerWidget .footer-widget {
+    margin-bottom: 60px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031312}}
+  #footerWidget ul li {
+    font-size: 10px;
+    color: #aaa;
+    list-style: disc outside;
+    padding: 6px 0 6px 2px;
+    margin-left: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031320}}
+  #footerWidget a {
+    color: #706359;
+    font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031326}}
+  #footerWidget .footer-first-widget {
+    width: 20%;
+    float: left;
+    margin-right: 80px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031331}}
+    #footerWidget .footer-first-widget img {
+      width: 120px;
+      height: 120px;
+      margin-top: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031338}}
+  #footerWidget .footer-second-widget {
+    width: 20%;
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031343}}
+  #footerWidget .footer-last-widget {
+    float: right;
+    width: 260px;
+    font-size: 12px;
+    color: #aaa;
+    position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031350}}
+    #footerWidget .footer-last-widget p {
+      font-size: 13px;
+      line-height: 26px;
+      padding: 0 0 20px 0;
+      border-bottom: solid 1px #f3f3f3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031356}}
+      #footerWidget .footer-last-widget p a {
+        font-size: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031361}}
+    #footerWidget .footer-last-widget img {
+      position: absolute;
+      bottom: -30px;
+      right: 0;
+      z-index: 1000; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031373}}
+.tagCloud {
+  line-height: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031376}}
+  .tagCloud a {
+    padding: 0 6px 0 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031382}}
+.searchForm {
+  margin-top: 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031390}}
+#searchform label {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031394}}
+#searchform #s {
+  width: 160px;
+  height: 26px;
+  line-height: 26px;
+  background: #fafafa;
+  border: solid 1px #eeeeee; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031402}}
+#searchform #searchsubmit {
+  background: #eee;
+  font-size: 14px;
+  border: 0 none;
+  padding: 6px 16px;
+  border-radius: 2px;
+  -o-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031413}}
+.footer-bottom {
+  color: #aaa;
+  font-size: 12px;
+  padding: 20px;
+  background: #fefefe;
+  border-top: solid 1px #efefef; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031420}}
+  .footer-bottom .copyright {
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031424}}
+  .footer-bottom .other-links {
+    float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031427}}
+    .footer-bottom .other-links li {
+      float: right;
+      margin-left: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031431}}
+      .footer-bottom .other-links li a {
+        color: #aaa; }
+
+/*********************
+Page Style
+*********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031447}}
+article.page {
+  margin: 0 auto 60px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031452}}
+.post-entry-content {
+  color: #605854;
+  font-size: 18px;
+  line-height: 2em;
+  text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031458}}
+  .post-entry-content p {
+    margin: 0 60px 30px; }
+
+/*Full Width Page-------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031469}}
+.fullWidth-header {
+  width: 100%;
+  height: 200px;
+  background: #999;
+  margin-bottom: 60px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031475}}
+  .fullWidth-header .wrap {
+    font-size: 28px;
+    color: #fff;
+    text-align: left;
+    width: 800px;
+    padding: 120px 60px 0;
+    margin: 0 auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031490}}
+.fullWidthPage {
+  width: 100%;
+  overflow: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031495}}
+.fullWidthPage #content {
+  padding: 0 40px; }
+
+/*Home Page-------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031504}}
+.fullWidthSection {
+  width: 100%;
+  padding: 100px 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031509}}
+.fullWidthSection.white {
+  background: #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031513}}
+#homeTopSection {
+  padding: 50px 0 60px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031517}}
+.fullWidthInner {
+  width: 960px;
+  max-width: 960px;
+  text-align: left;
+  margin: 0 auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031526}}
+#newVolumnSection {
+  height: 340px;
+  background: #fff;
+  box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+  -o-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+  -moz-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06);
+  -webkit-box-shadow: 0px 0px 8px rgba(40, 40, 40, 0.06); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031533}}
+  #newVolumnSection .volumnContent {
+    float: left;
+    width: 260px;
+    height: 260px;
+    text-align: left;
+    padding: 40px 40px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031540}}
+    #newVolumnSection .volumnContent .volNum {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031546}}
+    #newVolumnSection .volumnContent h2 {
+      color: #413529;
+      font-size: 22px;
+      line-height: 28px;
+      height: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+      overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031556}}
+    #newVolumnSection .volumnContent .summary {
+      color: #7e7672;
+      font-size: 16px;
+      line-height: 1.6em;
+      text-align: justify;
+      padding-top: 20px;
+      border-top: dotted 1px #dbd7d1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031566}}
+  #newVolumnSection .feature {
+    float: right;
+    width: 620px;
+    height: 340px;
+    overflow: hidden;
+    background: #f7f8f9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031573}}
+    #newVolumnSection .feature img {
+      width: 100%;
+      height: auto;
+      vertical-align: top; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031588}}
+#popVolumnSection .popVolumnTitle {
+  font-size: 24px;
+  line-height: 24px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  border-bottom: dotted 1px #efeeef; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031596}}
+  #popVolumnSection .popVolumnTitle .section_icon {
+    text-align: center;
+    margin-bottom: 16px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031601}}
+  #popVolumnSection .popVolumnTitle h2 {
+    font-size: 28px;
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031606}}
+  #popVolumnSection .popVolumnTitle .section_intro {
+    font-size: 14px;
+    color: #aaa;
+    margin-left: 6px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031613}}
+#popVolumnSection #radioSubscribe {
+  float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031618}}
+  #popVolumnSection #radioSubscribe .subcribeBtns li {
+    display: inline-block;
+    border-right: solid 1px #eeeeee;
+    padding: 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031623}}
+    #popVolumnSection #radioSubscribe .subcribeBtns li a {
+      display: inline-block;
+      line-height: 24px;
+      height: 24px;
+      font-size: 15px;
+      padding: 0 10px 0 32px;
+      background: url(../images/icon_32.png) left center no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031632}}
+    #popVolumnSection #radioSubscribe .subcribeBtns li a.itunes {
+      background-position: 0 -192px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031636}}
+    #popVolumnSection #radioSubscribe .subcribeBtns li a.rss {
+      background-position: 0 -216px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031640}}
+    #popVolumnSection #radioSubscribe .subcribeBtns li a.email {
+      background-position: 0 -240px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031653}}
+#popVolumnSection .popVolumnList ul {
+  margin-left: -30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031657}}
+  #popVolumnSection .popVolumnList ul li {
+    float: left;
+    display: inline-block;
+    margin: 0 0 40px 30px;
+    width: 300px;
+    box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+    -o-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+    -moz-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+    -webkit-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031663}}
+    #popVolumnSection .popVolumnList ul li a {
+      display: block;
+      line-height: 1.2; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031673}}
+#popVolumnSection .popVolumnList .featurePic {
+  width: 300px;
+  height: 160px;
+  background: #f5f7f9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031678}}
+  #popVolumnSection .popVolumnList .featurePic img {
+    width: 300px;
+    height: 160px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031684}}
+#popVolumnSection .popVolumnList .content {
+  padding: 20px 20px 30px;
+  background: #fff;
+  text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031689}}
+  #popVolumnSection .popVolumnList .content p {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031695}}
+  #popVolumnSection .popVolumnList .content h3 {
+    text-align: center;
+    height: 20px;
+    overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031701}}
+  #popVolumnSection .popVolumnList .content a {
+    color: #333;
+    font-size: 16px;
+    line-height: 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031714}}
+.showAll {
+  text-align: center;
+  padding: 30px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031719}}
+  .showAll a {
+    padding: 16px 40px 12px;
+    border: solid 1px #dee3e1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031723}}
+    .showAll a:hover {
+      color: #7e6b59;
+      background: #fdfbf8; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031728}}
+    .showAll a span {
+      display: inline-block;
+      font-size: 18px;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 0 0 40px;
+      background: url(../images/icon_32.png) 0 -288px no-repeat; }
+
+/*List Page-------------------------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031745}}
+#main {
+  padding-top: 40px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031752}}
+.volume-archive-list h1 {
+  font-size: 16px;
+  padding: 0 0 20px;
+  margin-bottom: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031758}}
+.volume-archive-list article {
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 1px solid #f1f1f1;
+  box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+  -o-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+  -moz-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+  -webkit-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031767}}
+.volume-archive-list .volume-image-wrap {
+  float: left;
+  padding-right: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031771}}
+  .volume-archive-list .volume-image-wrap img {
+    width: 260px;
+    height: 172px;
+    vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031778}}
+.volume-archive-list .volume-header-wrap {
+  text-align: left;
+  overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031783}}
+  .volume-archive-list .volume-header-wrap .volume-title {
+    font-size: 20px;
+    color: #333;
+    padding: 12px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031788}}
+    .volume-archive-list .volume-header-wrap .volume-title em {
+      font-size: 14px;
+      color: #fff;
+      display: inline-block;
+      padding: 4px 10px;
+      background: #BAC4D1;
+      vertical-align: 2px;
+      margin-right: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031799}}
+  .volume-archive-list .volume-header-wrap .volume-summary {
+    font-size: 16px;
+    line-height: 1.8em;
+    color: #999;
+    margin-bottom: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_base\.scss}line{font-family:\000031808}}
+  .volume-archive-list .volume-header-wrap .volume-meta a {
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+    background: #D0D6E0;
+    padding: 4px 10px;
+    margin-right: 4px; }
+
+/*********************
+TABLET & IPAD
+*********************/
+@media only screen and (max-width: 920px) {
+  /******************************************************************
+  Site Name: weblog.coletree.com
+  Author:	coletree
+  
+  Stylesheet: Desktop Stylsheet
+  
+  This is the desktop size. It's larger than an iPad so it will only
+  be seen on the Desktop.
+  
+  ******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000311}}
+  #inner-header {
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000315}}
+  #inner-content {
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000319}}
+  .footer #inner-footer {
+    width: 100%;
+    padding: 0 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000324}}
+  .footer-last-widget {
+    float: left; } }
+/*********************
+MOBILE DEVICES
+*********************/
+@media only screen and (max-width: 760px) {
+  /******************************************************************
+  Site Name: weblog.coletree.com
+  Author:	coletree
+  
+  Stylesheet: Tablet & Small Desktop Stylesheet
+  
+  Here's where you can start getting into the good stuff.
+  This size will work on iPads, other tablets, and desktops.
+  So you can start working with more styles, background images,
+  and other resources. You'll also notice the grid starts to
+  come into play. Have fun!
+  
+  ******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000314}}
+  .header {
+    height: 60px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000318}}
+  #inner-header {
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000322}}
+  .site-branding {
+    left: 10px;
+    top: -4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000327}}
+  #menuSwitchWrap {
+    display: inline-block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000331}}
+  #navMenuWrap {
+    float: none;
+    margin-top: 80px;
+    padding: 0 20px;
+    display: none;
+    background: #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000341}}
+  #inner-header nav .nav {
+    float: none;
+    display: block;
+    text-align: center;
+    padding: 0 0 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000347}}
+    #inner-header nav .nav li {
+      display: block;
+      float: none;
+      border-top: dotted 1px #c8c2b9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000352}}
+      #inner-header nav .nav li a {
+        border-right: 0 none;
+        display: block;
+        font-size: 16px;
+        overflow: hidden;
+        padding: 16px 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000373}}
+  .hentry.single-volume {
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000377}}
+  .volume-subTitle span.line {
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000381}}
+  .hentry.single-volume .volume-content {
+    padding: 40px 20px 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000385}}
+  .hentry.single-volume .volume-playlist {
+    padding: 20px 20px 40px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000389}}
+  #single-article-footer .left {
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000393}}
+  #single-article-footer .right {
+    border-left: 0 none;
+    float: none;
+    margin: auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000399}}
+  #single-article-footer .jiathis_style {
+    text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003106}}
+  #subscribeSection.postSubcribe {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003113}}
+  #subscribeSection.postSubcribe .subcribeBtns li {
+    padding: 8px 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003117}}
+  #related_volume {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003124}}
+  #related_volume {
+    padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003128}}
+  #related_volume h4 {
+    padding: 16px 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003132}}
+  #related_volume li {
+    padding: 20px 20px 20px 160px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003136}}
+  #related_volume li .feature-image {
+    left: 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003141}}
+  .single-volume-comment {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003148}}
+  .single-volume-comment {
+    padding: 15px 0 30px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003160}}
+  #footerWidget {
+    padding: 0 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003163}}
+    #footerWidget .widgetTitle {
+      font-size: 16px;
+      font-weight: normal;
+      padding-bottom: 16px;
+      margin-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003170}}
+    #footerWidget .footer-widget {
+      float: none;
+      display: block;
+      width: 100%;
+      margin-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003176}}
+      #footerWidget .footer-widget li {
+        padding: 12px 0 12px 2px;
+        border-bottom: dotted 1px #eeeeee; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003180}}
+        #footerWidget .footer-widget li a {
+          font-size: 16px;
+          display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003188}}
+    #footerWidget .footer-last-widget {
+      display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003197}}
+  .footer-bottom .other-links {
+    float: none;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003203}}
+    .footer-bottom .other-links li {
+      float: none;
+      display: inline-block;
+      margin-left: 0px;
+      padding: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003209}}
+      .footer-bottom .other-links li a {
+        font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003215}}
+  .footer-bottom .copyright {
+    float: none;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0; }
+
+  /*HomePage---------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003228}}
+  .fullWidthInner {
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003232}}
+  #subscribeSection .subcribeBtns {
+    display: block;
+    margin: 0 auto;
+    text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003238}}
+  #subscribeSection .subcribeBtns li {
+    border-right: 0 none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003242}}
+  #subscribeSection .socialBtns {
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003246}}
+  #popVolumnSection .popVolumnList ul li {
+    float: none; } }
+/*********************
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*********************/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /******************************************************************
+  Site Name: weblog.coletree.com
+  Author:	coletree
+  
+  Stylesheet: Retina Screens & Devices Stylesheet
+  
+  When handling retina screens you need to make adjustments, especially
+  if you're not using font icons. Here you can add them in one neat
+  place.
+  
+  ******************************************************************/
+  /* 
+  
+  EXAMPLE 
+  Let's say you have an image and you need to make sure it looks ok
+  on retina screens. Let's say we have an icon which dimension are
+  24px x 24px. In your regular stylesheets, it would look something
+  like this:
+  
+  .icon {
+  	width: 24px;
+  	height: 24px;
+  	background: url(img/test.png) no-repeat;
+  }
+  
+  For retina screens, we have to make some adjustments, so that image
+  doesn't look blurry. So, taking into account the image above and the
+  dimensions, this is what we would put in our retina stylesheet:
+  
+  .icon {
+  	background: url(img/test@2x.png) no-repeat;
+  	background-size: 24px 24px;
+  }
+  
+  So, you would create the same icon, but at double the resolution, meaning 
+  it would be 48px x 48px. You'd name it the same, but with a @2x at the end
+  (this is pretty standard practice). Set the background image so it matches
+  the original dimensions and you are good to go. 
+  
+  */ }
+/*********************
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*********************/
+@media print {
+  /******************************************************************
+  Site Name:
+  Author:
+  
+  Stylesheet: Print Stylesheet
+  
+  This is the print stylesheet. There's probably not a lot
+  of reasons to edit this stylesheet. If you want to
+  though, go for it.
+  
+  ******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000313}}
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000321}}
+  a, a:visited {
+    color: #444444 !important;
+    text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000326}}
+    a:after, a:visited:after {
+      content: " (" attr(href) ")"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000331}}
+    a abbr[title]:after, a:visited abbr[title]:after {
+      content: " (" attr(title) ")"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000338}}
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000342}}
+  pre, blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000347}}
+  thead {
+    display: table-header-group; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000351}}
+  tr, img {
+    page-break-inside: avoid; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000355}}
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000363}}
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000369}}
+  h2,
+  h3 {
+    page-break-after: avoid; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/partials\/_print\.scss}line{font-family:\0000378}}
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none; } }

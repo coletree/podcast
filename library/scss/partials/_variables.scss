@@ -1,0 +1,42 @@
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+$black:             #333333;
+$grey:              #999999;
+$white:             #ffffff;
+
+$green:             #7dd667;
+$blue:              #2980b9;
+
+$gray:				#999;
+$light-gray:        #f8f9fa;
+$meta-gray:         #9fa6b4;
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+
+$link-color:        #453D31;
+$link-hover:        darken($link-color, 10%);
+
+$title-orange:		#C95B28;
+$text-color:		#605854;
+
+
+$disabled-gray:     #cfcfcf;

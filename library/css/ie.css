@@ -1,0 +1,358 @@
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/******************************************************************
+IMPORTS & DEPENDENCIES
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+******************************************************************/
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: Mixins Stylesheet
+
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+
+******************************************************************/
+/*********************
+Link Style
+*********************/
+/*********************
+Round Conner 
+*********************/
+/*********************
+Post Pic Shadow 
+*********************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Grid Styles
+
+Since the example grid is based on media queries, so rather than
+setup some js library that would make IE8 and below understand
+media queries, let's just add some styles that serves a fixed grid.
+
+Again, if you want to roll your own, just remove this junk and put
+whatever you use in here.
+
+******************************************************************/
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000311}}
+#inner-header {
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000315}}
+#inner-content {
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000319}}
+.footer #inner-footer {
+  width: 100%;
+  padding: 0 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000324}}
+.footer-last-widget {
+  float: left; }
+
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000314}}
+.header {
+  height: 60px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000318}}
+#inner-header {
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000322}}
+.site-branding {
+  left: 10px;
+  top: -4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000327}}
+#menuSwitchWrap {
+  display: inline-block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000331}}
+#navMenuWrap {
+  float: none;
+  margin-top: 80px;
+  padding: 0 20px;
+  display: none;
+  background: #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000341}}
+#inner-header nav .nav {
+  float: none;
+  display: block;
+  text-align: center;
+  padding: 0 0 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000347}}
+  #inner-header nav .nav li {
+    display: block;
+    float: none;
+    border-top: dotted 1px #c8c2b9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000352}}
+    #inner-header nav .nav li a {
+      border-right: 0 none;
+      display: block;
+      font-size: 16px;
+      overflow: hidden;
+      padding: 16px 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000373}}
+.hentry.single-volume {
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000377}}
+.volume-subTitle span.line {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000381}}
+.hentry.single-volume .volume-content {
+  padding: 40px 20px 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000385}}
+.hentry.single-volume .volume-playlist {
+  padding: 20px 20px 40px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000389}}
+#single-article-footer .left {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000393}}
+#single-article-footer .right {
+  border-left: 0 none;
+  float: none;
+  margin: auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000399}}
+#single-article-footer .jiathis_style {
+  text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003106}}
+#subscribeSection.postSubcribe {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003113}}
+#subscribeSection.postSubcribe .subcribeBtns li {
+  padding: 8px 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003117}}
+#related_volume {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003124}}
+#related_volume {
+  padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003128}}
+#related_volume h4 {
+  padding: 16px 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003132}}
+#related_volume li {
+  padding: 20px 20px 20px 160px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003136}}
+#related_volume li .feature-image {
+  left: 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003141}}
+.single-volume-comment {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003148}}
+.single-volume-comment {
+  padding: 15px 0 30px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003160}}
+#footerWidget {
+  padding: 0 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003163}}
+  #footerWidget .widgetTitle {
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 16px;
+    margin-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003170}}
+  #footerWidget .footer-widget {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003176}}
+    #footerWidget .footer-widget li {
+      padding: 12px 0 12px 2px;
+      border-bottom: dotted 1px #eeeeee; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003180}}
+      #footerWidget .footer-widget li a {
+        font-size: 16px;
+        display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003188}}
+  #footerWidget .footer-last-widget {
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003197}}
+.footer-bottom .other-links {
+  float: none;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003203}}
+  .footer-bottom .other-links li {
+    float: none;
+    display: inline-block;
+    margin-left: 0px;
+    padding: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003209}}
+    .footer-bottom .other-links li a {
+      font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003215}}
+.footer-bottom .copyright {
+  float: none;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 0; }
+
+/*HomePage---------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003228}}
+.fullWidthInner {
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003232}}
+#subscribeSection .subcribeBtns {
+  display: block;
+  margin: 0 auto;
+  text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003238}}
+#subscribeSection .subcribeBtns li {
+  border-right: 0 none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003242}}
+#subscribeSection .socialBtns {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003246}}
+#popVolumnSection .popVolumnList ul li {
+  float: none; }
+
+/*
+you can call the larger styles if you want, but there's really no need
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/

@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#menuSwitch").click(function(){$("#navMenuWrap").toggle()})});$(window).resize(function(){var e=$(window).width(),t=760;if(e>=t){$("#navMenuWrap").show();$("#menuSwitch").hide()}else{$("#navMenuWrap").hide();$("#menuSwitch").show()}});

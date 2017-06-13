@@ -1,0 +1,1824 @@
+/******************************************************************
+Site Name: weblog.coletree.com
+Author:	coletree
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+
+/*********************
+Global Value
+*********************/
+/**{
+	-moz-transition: 	all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: 		all 0.3s ease-in;
+    transition: 		all 0.3s ease-in;
+}*/
+
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+
+	color: $link-color;
+    text-decoration: none;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-hover;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body{
+	font-family: "PingHei","Lucida Grande","Lucida Sans Unicode","STHeiti","Helvetica","Arial","Verdana","sans-serif";
+	font-size: 100%;
+	color: $text-color;
+	-webkit-font-smoothing: antialiased;
+}
+
+.dashline{
+	height: 1px;
+	background:url(../images/dashline.png) center center;
+	margin-bottom: 60px;
+}
+
+
+
+
+/*********************
+HEADER STYLES
+*********************/
+.header{
+	width: 100%;
+	height: 80px;
+	background: none repeat scroll 0 0 #fff;
+	border-top: 4px solid #7ba80f;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	z-index: 999999;
+    		box-shadow: 0px 1px 2px rgba(40,40,40,0.06);
+    	 -o-box-shadow: 0px 1px 2px rgba(40,40,40,0.06);
+       -moz-box-shadow: 0px 1px 2px rgba(40,40,40,0.06);
+    -webkit-box-shadow: 0px 1px 2px rgba(40,40,40,0.06);
+}
+
+#inner-header{
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.site-branding{
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+}
+
+.site-title{
+	margin: 0 auto; 
+	overflow: hidden;
+}
+
+.site-title a{
+	display: inline-block;
+	width: 180px; 
+	height:60px; 
+	background:url(../images/logo.png) no-repeat 0 -7px;
+	text-decoration: none; 
+	line-height: 99em;
+	margin-left: 8px;
+	overflow: hidden;
+}
+
+#menuSwitchWrap{
+	position: absolute;
+	right: 20px;
+	top: 0;
+	z-index: 9998;
+	display: none;
+}
+
+#menuSwitch,
+#menuSwitch:hover,
+#menuSwitch:active,
+#menuSwitch:link,
+#menuSwitch:visited,
+#menuSwitch:focus{
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	font-size: 28px;
+	cursor: pointer;
+	opacity: 0.6;
+	outline: none;
+
+}
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+#navMenuWrap{
+	float: right;
+}
+
+.nav{
+	margin: 0;
+	padding: 28px 0 0 0;
+
+	li {
+
+		float: left;
+		display: inline-block;
+
+		a {
+			color: #6f5f58;
+			font-size: 17px;
+			line-height: 20px;
+			text-decoration: none;
+			display: inline-block;
+			height: 20px;
+			padding: 0 24px;
+			border-right: 1px dotted #c8c2b9;
+			overflow: hidden;
+
+			/*
+			remember this is for mobile ONLY, so there's no need
+			to even declare hover styles here, you can do it in
+			the style.scss file where it's relevant. We want to
+			keep this file as small as possible!
+			*/
+			&:hover, &:focus {
+				color: #6f5f58;
+				text-decoration: none;
+			}
+		}
+
+		&:first-child {}
+
+		&:last-child {border: 0 none;}
+
+		/*
+		so you really have to rethink your dropdowns for mobile.
+		you don't want to have it expand too much because the
+		screen is so small. How you manage your menu should
+		depend on the project. Here's some great info on it:
+		http://www.alistapart.com/articles/organizing-mobile/
+		*/
+		ul.sub-menu,
+		ul.children {
+
+			li {
+
+				a {
+					padding-left: 30px;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+
+				}
+
+				&:first-child {}
+
+				&:last-child {}
+
+			}
+
+		}
+
+	} /* end .menu li */
+
+	&:last-child {border: 0 none;}
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current-page-ancestor {
+
+		a {}
+
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content{
+	width: 100%;
+	padding: 80px 0 0;
+	text-align: center;
+	background:url(../images/bg_main.png) repeat;
+}
+
+#inner-content{
+	width: 920px;
+	max-width: 920px;
+	min-width: 320px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+		.hentry {
+
+			margin-bottom: 120px;
+
+			.feature-image{
+				img{
+				}
+			}
+
+			.entry-title,
+			.entry-title a{
+				@include orangeTitleLink;
+				font-size:26px;
+				font-weight:bold;
+				text-align:center;
+			}
+
+			.entry-title{
+				margin-bottom: 30px;
+			}
+
+			.entry-meta-wrap{
+				color:#e9e9e9;
+				font-size:12px;
+				text-align: center;
+				/*background:url(../images/dashline.png) no-repeat center center;*/
+
+				a{
+					color: #aaa;
+					&:hover{
+						color:#F6512C;
+					};
+				}
+
+                .entry-meta{
+                    /*background: url(../images/bg_main.png) repeat;*/
+                }
+
+				.entry-meta-date,
+				.entry-meta-comm,
+				.entry-meta-edit{
+					padding: 0 8px;
+				}
+
+			}
+
+			footer {
+				color:#ddd;
+				font-size:20px;
+				text-align: center;
+
+                .article-footer-wrap{
+                    /*background: url(../images/bg_main.png) repeat;*/
+                    padding: 0 16px;
+                }
+
+			}
+
+
+
+		} /* end .hentry */
+
+		.single-title,
+		.page-title,
+		.entry-title {
+			margin: 0;
+		}
+
+		.single-title {}
+
+		.page-title {}
+
+		.entry-title {}
+
+		.archive-title {}
+
+		/* want to style individual post classes? Booya! */
+		.post-id {}         /* post by id (i.e. post-3) */
+		.post {}            /* general post style */
+		.page {}            /* general article on a page style */
+		.attachment {}      /* general style on an attatchment */
+		.sticky {}          /* sticky post style */
+		.hentry {}          /* hentry class */
+		.category-slug {}   /* style by category (i.e. category-videos) */
+		.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+
+
+
+		/* entry content */
+		.entry-content {
+			color: #332A23; 
+			font-size: 18px; 
+			line-height: 1.8;
+			text-align: left;
+			padding: 0 60px;
+
+			p {
+				margin: 0 0 30px;
+
+				a{
+					@include greenLink;
+				}
+
+				img{
+					@include image-shadow(8px);
+				}
+
+			}
+
+			table {
+				width: 100%;
+				border: 1px solid $gray;
+				margin-bottom: 1.5em;
+
+				caption {
+					margin: 0 0 7px;
+					font-size: 0.75em;
+					color: $meta-gray;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+
+			tr {
+				border-bottom: 1px solid $gray;
+
+				&:nth-child(even) {
+					background-color: $light-gray;
+				}
+			}
+
+			td {
+				padding: 7px;
+				border-right: 1px solid $gray;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+
+			th {
+				background-color: $light-gray;
+				border-bottom: 1px solid $gray;
+				border-right: 1px solid $gray;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+
+			blockquote {
+				margin: 0 0 30px;
+				padding: 20px 30px;
+				border-left: 3px solid #BFBAB5;
+				font-size: 16px;
+				font-style: italic;
+				color: #776e64;
+				background:rgba(255, 255, 255, 0.6);
+
+				&:before {}
+
+				p{
+					margin-bottom: 0;
+				}
+
+			}
+
+			li {list-style: disc inside none;}
+
+			.mejs-container{margin-bottom: 30px;}
+
+			img {
+				margin: 0 0 30px 0;
+				max-width: 100%;
+				height: auto;
+				vertical-align: top;
+			}
+
+			/*
+			image alignment on a screen this size may be
+			a bit difficult. It's set to start aligning
+			and floating images at the next breakpoint,
+			but it's up to you. Feel free to change it up.
+			*/
+			.alignleft, img.alignleft {display:inline; float:left; margin-top:0; margin-right: 40px;}
+			.alignright, img.alignright {display:inline; float:right; margin-top:0; margin-left: 40px;}
+			.aligncenter, img.aligncenter {clear:both; display:block; margin-left:auto; margin-right:auto;}
+
+			.size-auto,
+			.size-full,
+			.size-large,
+			.size-medium,
+			.size-thumbnail {
+				max-width: 100%;
+				height: auto;
+			}
+
+			img.size-full, img.size-large{ _width:100%;}
+
+			pre {
+				background: $black;
+				color: $light-gray;
+				font-size: 0.9em;
+				padding: 1.5em;
+				margin: 0 0 1.5em;
+				border-radius: 3px;
+			}
+
+		} /* end .entry-content */
+
+		.wp-caption {
+			max-width: 100%;
+			background: #fefefe;
+			padding: 8px;
+			margin-bottom: 30px;
+
+			/* images inside wp-caption */
+			img{
+				max-width: 100%;
+				margin-bottom: 0;
+				width: 100%;
+			}
+
+			p.wp-caption-text {
+				color: #aaa;
+				font-size: 0.8em;
+				font-style: italic;
+				margin: 8px 0 4px;
+				text-align: center;
+			}
+
+		} /* end .wp-caption */
+
+
+	// the tag output
+	.tags {
+		margin: 0;
+	}
+
+
+
+
+
+/******************************************************************
+Single Volume Style
+******************************************************************/
+
+.hentry.single-volume{
+
+	width: 760px;
+	background: #fff;
+	margin:0 auto 40px;
+
+	@include image-shadow(8px);
+
+	.article-featurePic{
+
+		.feature-image{
+			text-align: center;
+			img{
+				max-width: 100%;	
+				width: 100%;
+				height: auto;
+				vertical-align: top;
+			}
+		}
+
+	}
+
+	.volume-content{
+		color: #605854;
+    	font-size: 18px;
+    	line-height: 2em;
+    	text-align: left;
+		padding: 40px 50px 10px;
+
+
+		.article-header{
+
+			padding-bottom: 20px;
+
+			.volume-title{
+				font-size: 22px;
+				color: #413529;
+				text-align: center;
+				line-height: 30px;
+				height: 30px;
+				overflow: hidden;
+				margin-bottom: 12px;
+
+				span{
+					font-size: 24px;
+					font-weight: bold;
+					margin-right: 8px;
+				}
+
+			}
+
+			.volume-subTitle{
+				font-size: 14px;
+				color: #c3c3c3;
+				text-align: center;
+
+				.line{
+					font-size: 12px;
+					font-weight: normal;
+					color: #eee;
+				}
+			}
+
+		}
+
+		p{
+			margin-bottom: 0px;
+		}
+
+	}
+
+	.powerpress_player{
+
+		margin-top: 30px;
+
+		audio{
+			width: 100%;
+			height: 36px;
+		}
+
+	}
+
+	.volume-playlist{
+		color: #605854;
+    	font-size: 18px;
+    	line-height: 1.8;
+    	text-align: left;
+		padding: 20px 50px 40px;
+		background: #fdfdfd;
+		border-top: solid 1px #f9f9f9;
+		border-bottom: solid 1px #f6f4ef;
+
+		h4{
+			font-size: 14px;
+			color: #999;
+			margin-bottom: 10px;
+		}
+
+		ul{
+
+			li{
+				font-size: 14px;
+				background: #f6f8fa;
+				margin-bottom: 3px;
+
+				a{
+					color: #666;
+					display: block;
+					line-height: 40px;
+				}
+
+				span.no{
+					color: #666;
+					display: inline-block;
+					width: 40px;
+					text-align: center;
+					border-right: solid 2px #fff;
+					margin-right: 16px;
+				}
+			}
+
+		}
+	}
+
+
+	.entry-meta-wrap{
+		color:#e9e9e9;
+		font-size:12px;
+		text-align: center;
+		/*background:url(../images/dashline.png) no-repeat center center;*/
+
+		a{
+			color: #aaa;
+			&:hover{
+				color:#F6512C;
+			};
+		}
+
+		.entry-meta-date,
+		.entry-meta-comm,
+		.entry-meta-edit{
+			padding: 0 8px;
+		}
+
+	}
+
+
+	
+
+
+
+} /* end .hentry */
+
+
+
+
+
+/******************************************************************
+Share jiathis Style & fuli
+******************************************************************/
+.article-footer{
+	color:#ddd;
+	font-size:14px;
+}
+
+#single-article-footer .left{
+	float: left;
+	font-size: 14px;
+	padding: 16px 0 16px 20px;
+	line-height: 32px;
+
+	a{
+		color: #959a9e;
+	}
+}
+
+#single-article-footer .right{
+	float: right;
+	border-left: solid 1px #F6F4EF;
+}
+
+
+#single-article-footer .jiathis_style{
+	text-align: right;
+	padding:16px 20px;
+}
+
+#single-article-footer .jiathis.jiathis_separator.jtico.jtico_jiathis{
+    display: none !important;
+}
+
+#single-article-footer .jiathis_style .button, 
+#single-article-footer .jiathis_style .jiathis_txt{
+    float: none;
+    display: inline-block;
+    font-size: 14px !important;
+}
+
+
+#single-article-footer .jiathis_button_weixin,
+#single-article-footer .jiathis_button_tsina,
+#single-article-footer .jiathis_button_douban,
+#single-article-footer .jiathis_button_twitter,
+#single-article-footer .jiathis_button_googleplus{
+	display: inline-block;
+	padding: 0 4px !important;
+	margin: 0 2px;
+}
+
+#single-article-footer .jiathis_style .jtico {
+    cursor: pointer;
+    display: inline-block !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding-left: 0 !important;
+}
+
+#single-article-footer .jiathis_button_weixin .jtico_weixin{
+    background: url(../images/icon_32.png) no-repeat;
+    background-position: 0 0;
+    &:hover{
+    	background-position: -32px 0;
+    }
+}
+
+#single-article-footer .jiathis_button_tsina .jtico_tsina{
+    background: url(../images/icon_32.png) no-repeat;
+    background-position: 0 -32px;
+    &:hover{
+    	background-position: -32px -32px;
+    }
+}
+
+#single-article-footer .jiathis_button_douban .jtico_douban{
+    background: url(../images/icon_32.png) no-repeat;
+    background-position: 0 -64px;
+    &:hover{
+    	background-position: -32px -64px;
+    }
+}
+
+#single-article-footer .jiathis_button_twitter .jtico_twitter{
+    background: url(../images/icon_32.png) no-repeat;
+    background-position: 0 -96px;
+    &:hover{
+    	background-position: -32px -96px;
+    }
+}
+
+#single-article-footer .jiathis_button_googleplus .jtico_googleplus{
+    background: url(../images/icon_32.png) no-repeat;
+    background-position: 0 -128px;
+    &:hover{
+    	background-position: -32px -128px;
+    }
+}
+
+
+
+
+/******************************************************************
+Relate Post
+******************************************************************/
+#related_volume{
+
+	background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0 auto 60px;
+    padding: 15px;
+    width: 730px;
+
+	ul{
+		text-align: left;
+		border: solid 1px #F6F4EF;
+	}
+
+	h4{	
+		color:#605854;
+		padding: 16px 30px;
+	}
+
+	li{
+		position: relative;
+		padding: 20px 30px 20px 180px;
+		border: solid 1px #F6F4EF;
+		border-width: 1px 0 0;
+
+		a{
+			display: block;
+		}
+
+		.feature-image{
+
+			position: absolute;
+			left: 30px;
+			top: 20px;
+
+			img{
+				width: 120px;
+				height: 80px;
+				vertical-align: top;
+			}
+
+		}
+
+		.info{
+
+			padding: 10px 0;
+
+			h5{
+				color: #302a1a;
+				font-size: 16px;
+				font-weight: 400%;
+				height: 30px;
+				line-height: 30px;
+				overflow: hidden;
+			}
+
+			.text{
+				color: #999;
+				height: 30px;
+				line-height: 30px;
+				overflow: hidden;
+			}
+		}
+
+	}
+
+}
+
+
+
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+
+.pagination,
+.wp-prev-next {
+	padding: 40px 0;
+	margin-bottom: 80px;
+}
+	.pagination{
+    text-align: center;
+
+    ul {
+      display: inline-block;
+      white-space: nowrap;
+      padding: 0;
+      clear: both;
+    }
+
+    li {
+      padding: 0;
+      margin-right: 4px;
+      background-color: $white;
+      border-radius: 2px;
+      float: left;
+      display: inline;
+      overflow: hidden;
+    }
+
+    a, span {
+      margin: 0;
+      text-decoration: none;
+      padding: 0;
+      line-height: 1em;
+      font-size: 1em;
+      font-weight: normal;
+      padding: 0.75em;
+      min-width: 1em;
+      display: block;
+      color: $text-color;
+
+      &:hover, &:focus {
+      	background-color: $text-color;
+      	color: $white;
+      }
+    }
+
+    .current{
+    	cursor: default;
+    	color: #C95B28;
+
+    	&:hover, &:focus {
+    		color: #C95B28;
+    		background-color: $white;
+    	}
+    }
+
+  } /* end .bones_page_navi */
+
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+
+/* h3 comment title */
+#comments-title {
+	padding: 0.75em;
+	margin: 0;
+	border-top: 1px solid $light-gray;
+}
+
+.commentlist {
+	margin: 0;
+	list-style-type: none;
+}
+
+.comment {
+	position: relative;
+	clear: both;
+	overflow: hidden;
+	padding: 1.5em;
+	border-bottom: 1px solid $light-gray;
+
+	.comment-author {
+		padding: 7px;
+		border: 0;
+	}
+
+	/* vcard */
+	.vcard {
+		margin-left: 50px;
+
+		cite.fn {
+			font-weight: 700;
+			font-style: normal;
+
+			a.url {}
+
+		}
+
+		time {
+			display: block;
+			font-size: 0.9em;
+			font-style: italic;
+
+			a {
+				color: $meta-gray;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+
+		}
+
+		.photo {}
+
+		.avatar {
+			position: absolute;
+			left: 16px;
+			border-radius: 50%;
+		}
+
+	} /* end .commentlist .vcard */
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.children {
+		margin: 0;
+
+		li {}
+
+			/* variations */
+			.comment {}
+			.alt {}
+			.odd {}
+			.even {}
+			.depth-1 {}           /* change number for different depth */
+			.byuser {}
+			.bypostauthor {}
+			.comment-author-admin {}
+
+	} /* end children */
+
+
+	&[class*=depth-] {
+		margin-top: 1.1em;
+	}
+
+	&.depth-1 {
+		margin-left: 0;
+		margin-top: 0;
+	}
+
+	&:not(.depth-1) {
+		margin-top: 0;
+		margin-left: 7px;
+		padding: 7px;
+	}
+
+	/* general comment classes */
+	&.alt {}
+	&.odd {
+		background-color: $white;
+	}
+	&.even {
+		background: $light-gray;
+	}
+}
+
+	/* comment content */
+	.comment_content {
+
+		p {
+			margin: 0.7335em 0 1.5em;
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+
+	} /* end .commentlist .comment_content */
+
+	/* comment reply link */
+	.comment-reply-link {
+		@extend .blue-btn;
+		font-size: 0.9em;
+		float: right;
+
+		&:hover,
+		&:focus {
+		}
+
+	} /* end .commentlist .comment-reply-link */
+
+	/* edit comment link */
+	.comment-edit-link {
+		font-style: italic;
+		margin: 0 7px;
+		text-decoration: none;
+		font-size: 0.9em;
+	}
+
+
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+
+.comment-respond {
+	@extend .cf;
+	padding: 1.5em;
+	border-top: 1px solid $light-gray;
+}
+
+	#reply-title {
+		margin: 0;
+	}
+
+	.logged-in-as {
+		color: $meta-gray;
+		font-style: italic;
+		margin: 0;
+
+		a {
+			color: $text-color;
+		}
+	}
+
+	.comment-form-comment {
+		margin: 1.5em 0 0.75em;
+	}
+
+	.form-allowed-tags {
+		padding: 1.5em;
+		background-color: $light-gray;
+		font-size: 0.9em;
+	}
+
+	/* comment submit button */
+	#submit {
+		@extend .blue-btn;
+		float: right;
+		font-size: 1em;
+	}
+
+	/* comment form title */
+	#comment-form-title {
+		margin: 0 0 1.1em;
+	}
+
+	/* logged in comments */
+	.comments-logged-in-as {}
+
+	/* allowed tags */
+	#allowed_tags {
+		margin: 1.5em 10px 0.7335em 0;
+	}
+
+	/* no comments */
+	.nocomments {
+		margin: 0 20px 1.1em;
+	}
+
+/******************************************************************
+DuoShuo STYLES
+******************************************************************/
+
+.single-volume-comment{
+	width: 730px;
+	padding: 15px 15px 30px;
+	margin:0 auto 60px;
+	background: #fff;
+}
+
+.single-volume-comment #ds-reset{
+	padding: 0 20px;
+}
+
+.single-volume-comment #ds-thread #ds-reset .ds-replybox{
+	margin: 0 0;
+    padding: 0 0 0 70px !important;
+}
+
+.single-volume-comment #ds-thread #ds-reset li.ds-tab {
+    margin: 0 0 0 6px;
+}
+
+.single-volume-comment #ds-thread #ds-reset .ds-replybox .ds-avatar {
+    left: 4px !important;
+}
+
+.single-volume-comment #ds-thread #ds-reset .ds-comments {
+    border-bottom: 1px solid #eee;
+}
+
+.single-volume-comment #ds-thread #ds-reset .ds-comments-info {
+    margin-top: 0;
+    padding: 16px 0;
+}
+
+.single-volume-comment #ds-thread #ds-reset .ds-post-self {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 4px;
+}
+
+.single-volume-comment #ds-thread #ds-reset ul{
+    text-align: right;
+}
+
+.single-volume-comment #ds-thread #ds-reset li.ds-post {
+    border-top: 1px solid #eee;
+}
+
+.single-volume-comment #ds-thread #ds-reset .ds-sort {
+	display: none;
+}
+
+.single-volume-comment #ds-thread #ds-reset .ds-comment-body {
+    text-align: left;
+    padding-left: 70px;
+}
+
+.single-volume-comment .ds-powered-by{
+	display: none;
+}
+
+.single-volume-comment #ds-reset li.ds-post-placeholder{
+	display: none;
+}
+
+
+
+
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {}
+
+	.widgettitle {
+		font-size: 18px;
+		padding: 6px 0;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.widget {
+
+		text-align: left;
+
+		ul {
+
+			li {
+
+				padding: 6px 0;
+
+				&:first-child {}
+
+				&:last-child {}
+
+				a {}
+
+				/* deep nesting */
+				ul {}
+
+			}
+
+		}
+
+	}
+
+	.no-widgets {
+	}
+
+
+
+#sidebar1{
+
+	padding: 20px;
+
+	.widget{
+		color: #706359;
+		text-align: center;
+		font-size: 16px;
+		font-style: italic;
+
+		a{
+			color: #706359;
+
+			&:hover{
+				color: #57890B;
+			};
+		}
+
+	}
+
+	.testimonials-widget-testimonial cite, 
+	.testimonials-widget-testimonial div.credit {
+		display: block;
+		text-align: center;
+	}
+
+	.testimonials-widget-testimonial .open-quote,
+	.testimonials-widget-testimonial .close-quote{
+		color: #ccc;
+	    font-size: 36px;
+	    padding: 0 20px;
+	}
+
+}
+
+
+#sidebar2{
+	padding: 0 20px;
+}
+
+
+
+
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav a bit more in-depth. Remember to keep it simple because you'll have to
+override these styles for the desktop view.
+*/
+
+.footer {
+	clear: both;
+	padding: 60px 0 0;
+	background: #fff;	
+
+	#inner-footer{
+		width: 840px;
+		padding: 0 40px;
+		margin: 0 auto;
+	}
+
+}
+
+
+#footerWidget{
+
+	padding: 0 20px;
+
+	.widgetTitle{
+		font-size: 14px;
+		font-weight: bold;
+		color: #605854;
+		border-bottom: 1px solid #eee;
+		padding: 0 0 10px;
+		margin-bottom: 8px;
+	}
+
+	.footer-widget{
+		margin-bottom: 60px;
+	}
+
+	ul li{
+		font-size: 10px;
+		color: #aaa;
+		list-style: disc outside;
+		padding: 6px 0 6px 2px;
+		margin-left: 10px;
+	}
+
+	a{
+		color: #706359;
+		font-size: 14px;
+	}
+
+
+	.footer-first-widget{
+		width: 20%;
+		float: left;
+		margin-right: 80px;
+
+		img{
+			width: 120px;
+			height: 120px;
+			margin-top: 8px;
+		}
+	}
+
+	.footer-second-widget{
+		width: 20%;
+		float: left;
+	}
+
+	.footer-last-widget{
+		float: right;
+		width: 260px;
+		font-size: 12px;
+		color: #aaa;
+		position: relative;
+
+		p{
+			font-size: 13px;
+			line-height: 26px;
+			padding: 0 0 20px 0;
+			border-bottom: solid 1px #f3f3f3;
+
+			a{
+				font-size: 12px;
+			}
+		}
+
+		img{
+			position: absolute;
+			bottom: -30px;
+			right: 0;
+			z-index: 1000;
+		}
+	}
+
+
+}
+
+
+.tagCloud{
+	line-height: 24px;
+
+	a{
+		padding: 0 6px 0 0;
+	}
+
+}
+
+.searchForm{
+
+	margin-top: 20px;
+
+}
+
+#searchform{
+
+	label{
+		display: none;
+	}
+
+	#s{
+		width: 160px;
+		height: 26px;
+		line-height: 26px;
+		background: #fafafa;
+		border: solid 1px #eee;
+	}
+
+	#searchsubmit{
+		background: #eee;
+		font-size: 14px;
+		border: 0 none;
+		padding: 6px 16px;
+		@include border-radius(2px);
+	}
+
+}
+
+
+.footer-bottom{
+	color: #aaa;
+	font-size: 12px;
+	padding: 20px;
+	background: #fefefe;
+	border-top: solid 1px #efefef;
+
+	.copyright {
+		float: left;
+	}
+
+	.other-links{
+		float: right;
+
+		li{
+			float: right;
+			margin-left: 8px;
+
+			a{
+				color: #aaa;
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+/*********************
+Page Style
+*********************/
+article.page{
+    margin: 0 auto 60px;
+}
+
+
+.post-entry-content{
+	color: #605854;
+	font-size: 18px;
+	line-height: 2em;
+	text-align: left;
+
+	p{
+		margin: 0 60px 30px;
+	}
+
+}
+
+
+
+
+/*Full Width Page-------------------------------------------------------*/
+
+.fullWidth-header{
+	width: 100%;
+	height: 200px;
+	background: #999;
+	margin-bottom: 60px;
+
+	.wrap{
+		font-size: 28px;
+		color: #fff;
+		text-align: left;
+		width: 800px;
+		padding: 120px 60px 0;
+		margin: 0 auto ;
+
+		h1{
+		}
+	}
+
+}
+
+
+.fullWidthPage{
+    width: 100%; 
+    overflow: hidden;
+}
+
+.fullWidthPage #content{
+    padding: 0 40px;
+}
+
+
+
+
+/*Home Page-------------------------------------------------------*/
+
+.fullWidthSection{
+	width: 100%;
+	padding: 100px 0;
+}
+
+.fullWidthSection.white{
+	background: #fff;
+}
+
+#homeTopSection{
+	padding: 50px 0 60px;
+}
+
+.fullWidthInner{
+	width: 960px;
+	max-width: 960px;
+	text-align: left;
+	margin: 0 auto;
+}
+
+
+
+#newVolumnSection{
+
+	height: 340px;
+	background: #fff;
+
+	@include image-shadow(8px);
+
+	.volumnContent{
+		float: left;
+		width: 260px;
+		height: 260px;
+		text-align: left;
+		padding: 40px 40px 0;
+
+		.volNum{
+			text-align: center;
+			font-size: 18px;
+			margin-bottom: 12px;
+		}
+
+		h2{
+			color: #413529;
+			font-size: 22px;
+			line-height: 28px;
+			height: 28px;
+			text-align: center;
+			margin-bottom: 20px;
+			overflow: hidden;
+		}
+
+		.summary{
+			color: #7e7672;
+			font-size: 16px;
+			line-height: 1.6em;
+			text-align: justify;
+			padding-top: 20px;
+			border-top: dotted 1px #dbd7d1;
+		}
+	}
+
+	.feature{
+		float: right;
+		width: 620px;
+		height: 340px;
+		overflow: hidden;
+		background: #f7f8f9;
+
+		img{
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+	}
+
+}
+
+
+
+
+#popVolumnSection{
+
+
+	.popVolumnTitle{
+		font-size: 24px;
+		line-height: 24px;
+		padding-bottom: 30px;
+		margin-bottom: 40px;
+		border-bottom: dotted 1px #efeeef;
+		
+
+		.section_icon{
+			text-align: center;
+			margin-bottom: 16px;
+		}
+
+		h2{
+			font-size: 28px;
+			float: left;
+		}
+
+		.section_intro{
+			font-size: 14px;
+			color: #aaa;
+			margin-left: 6px;
+		}
+	}
+
+	#radioSubscribe{
+		float: right;
+
+		.subcribeBtns{
+
+			li{
+				display: inline-block;
+				border-right: solid 1px #eee;
+				padding: 0 10px;
+				
+				a{
+					display: inline-block;
+					line-height: 24px;
+					height: 24px;
+					font-size: 15px;
+					padding: 0 10px 0 32px;
+					background: url(../images/icon_32.png) left center no-repeat;
+				}
+
+				a.itunes{
+					background-position: 0 -192px;
+				}
+
+				a.rss{
+					background-position: 0 -216px;
+				}
+
+				a.email{
+					background-position: 0 -240px;
+				}
+
+			}
+
+		}
+
+	}
+
+
+	.popVolumnList{
+
+		ul{
+			margin-left: -30px;
+
+
+			li{
+				float: left;
+				display: inline-block;
+				margin: 0 0 40px 30px;
+				width: 300px;
+
+				a{
+					display: block;
+					line-height: 1.2;
+				}
+
+				@include image-shadow(5px);
+
+			}
+		}
+
+		.featurePic{
+			width: 300px;
+			height: 160px;
+			background: #f5f7f9;
+
+			img{
+				width: 300px;
+				height: 160px;
+			}
+		}
+
+		.content{
+			padding:20px 20px 30px;
+			background: #fff;
+			text-align: center;
+
+			p{
+				font-size: 16px;
+				text-align: center;
+				margin-bottom: 12px;
+			}
+
+			h3{
+				text-align: center;
+				height: 20px;
+				overflow: hidden;
+			}
+
+			a{
+				color: #333;
+				font-size: 16px;
+				line-height: 20px;
+			}
+
+		}
+
+
+	}
+
+}
+
+.showAll{
+
+	text-align: center;
+	padding: 30px 0 0;
+
+	a{
+    	padding: 16px 40px 12px;
+    	border: solid 1px #DEE3E1;
+
+		&:hover{
+			color: #7e6b59;
+			background: #fdfbf8;
+		};
+
+		span{
+			display: inline-block;
+			font-size: 18px;
+			height: 32px;
+			line-height: 32px;
+			padding: 0 0 0 40px;
+			background: url(../images/icon_32.png) 0 -288px no-repeat;
+		}
+	}
+
+
+}
+
+
+
+
+/*List Page-------------------------------------------------------*/
+#main{
+	padding-top: 40px;
+}
+
+
+.volume-archive-list{
+
+	h1{
+		font-size: 16px;
+		padding:0 0 20px;
+		margin-bottom: 40px;
+	}
+
+	article{
+		background: #fff;
+		padding: 30px;
+		margin-bottom: 40px;
+		border: 1px solid #f1f1f1;
+		@include image-shadow(5px);
+	}
+
+
+	.volume-image-wrap{
+		float: left;
+		padding-right: 40px;
+
+		img{
+			width: 260px;
+			height: 172px;
+			vertical-align: top;
+		}
+	}
+
+	.volume-header-wrap{
+
+		text-align: left;
+		overflow: hidden;
+
+		.volume-title{
+			font-size: 20px;
+			color: #333;
+			padding: 12px 0;
+
+			em{
+				font-size: 14px;
+				color: #fff;
+				display: inline-block;
+				padding: 4px 10px;
+				background: #BAC4D1;
+				vertical-align: 2px;
+				margin-right: 8px;
+			}
+		}
+
+		.volume-summary{
+			font-size: 16px;
+			line-height: 1.8em;
+			color: #999;
+			margin-bottom: 12px;
+		}
+
+		.volume-meta{
+
+			a{
+				color: #fff;
+				font-size: 12px;
+				line-height: 20px;
+				background: #D0D6E0;
+				padding: 4px 10px;
+				margin-right: 4px;
+			}
+		}
+
+	}
+
+
+
+}
+
+
