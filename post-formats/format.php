@@ -15,29 +15,27 @@
 
               <article id="post-<?php the_ID(); ?>" <?php post_class('single-volume'); ?> role="article">
 
-
                 <section class="article-featurePic">
                   
-                  <!-- check if the post has a Post Thumbnail assigned to it. -->
                   <?php if ( has_post_thumbnail()) : ?>
-                    
                     <div class="feature-image" >
                       <?php the_post_thumbnail('full'); ?>
                     </div>
-
                   <?php endif; ?>
 
-                </section>
+                  <p>
+                    <span style="background-color:<?php the_field('volMainColor'); ?>">
+                      Vol.&nbsp;<?php the_field('volNum'); ?>
+                    </span>
+                  </p>
 
+                </section>
 
                 <section class="volume-content cf" itemprop="articleBody">
 
                   <header class="article-header">
 
-                    <h2 class="volume-title">
-                      <span style="color:<?php the_field('volMainColor'); ?>">Vol.&nbsp;<?php the_field('volNum'); ?></span>
-                      <em><?php the_title(); ?></em>
-                    </h2>
+                    <h2 class="volume-title"><?php the_title(); ?></h2>
 
                     <h1 class="volume-subTitle">
                       <span class="line">———————————</span>
@@ -73,7 +71,6 @@
                   ?>
 
                 </section>
-
 
                 <section class="volume-playlist cf">
 
@@ -114,53 +111,39 @@
                 </section>
 
 
+                <!-- 单篇文章最后/阅读数 -->
+                <div class="post_view_count">阅读 <?php post_views('10', '1'); ?></div>
+
+
                 <!-- 单篇文章最后 -->
                 <footer class="article-footer cf" id="single-article-footer">
 
-                  <div class="right">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td width="50%" valign="top">
+                        <p>
+                          <img src="<?php echo get_template_directory_uri(); ?>/library/images/qcode_weixin.png">
+                        </p>
+                      </td>
+                      <td width="50%" valign="top">
+                        <p>
+                        <img src="<?php echo get_template_directory_uri(); ?>/library/images/qcode_dashang.png">
+                        </p>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
                     
-                    <!-- JiaThis Button BEGIN -->
-                      <div class="jiathis_style">
-                        <a class="jiathis_button_weixin"></a>
-                        <a class="jiathis_button_tsina"></a>
-                        <a class="jiathis_button_douban"></a>
-                        <a class="jiathis_button_twitter"></a>
-                        <a class="jiathis_button_googleplus"></a>
-                        <a href="http://www.jiathis.com/share?uid=1725925" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-                      </div>
-                      <script type="text/javascript" >
-                      var jiathis_config={
-                        data_track_clickback:true,
-                        summary:"",
-                        ralateuid:{
-                          "tsina":"coletree"
-                        },
-                        appkey:{
-                          "tsina":"3982599182"
-                        },
-                        shortUrl:false,
-                        hideMore:true
-                      }
-                      </script>
-                      <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1725925" charset="utf-8"></script>
-                      <!-- JiaThis Button END -->
-                  </div>
-
-
-                  <div class="left">
-                    
-                    <a href="<?php the_field('sharefileLink'); ?>" target="_blank">
-                      本期福利：<?php the_field('sharefile'); ?>
-                    </a> 
-                    
-                  </div>
-                    
-
                 </footer> <?php // end article footer ?>
 
 
               </article> <?php // end article ?>
 
+
+              <div class="single-volume-comment">
+                <?php comments_template(); ?>
+              </div>
 
 
               <div id="related_volume" class="clearfix">
@@ -192,7 +175,7 @@
 
                         if (have_posts()) {
 
-                          echo '<h4><span>如果你喜欢本期，不妨听听以下类似节目:</span></h4>';
+                          echo '<h4><span>往期类似节目:</span></h4>';
 
                           while (have_posts()) {
 
@@ -237,10 +220,8 @@
               </div>
 
 
-
-
-              <div class="single-volume-comment">
-                
-                <?php comments_template(); ?>
-
+              <div class="signle-showAll">
+                <a href="http://www.coletree.com/podcast/treeradio/">
+                  <span>查看往期全部节目</span>
+                </a>
               </div>

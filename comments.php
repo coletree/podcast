@@ -14,7 +14,9 @@ if ( post_password_required() ) {
 
   <?php if ( have_comments() ) : ?>
 
-    <h3 id="comments-title" class="h2"><?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'bonestheme' ) );?></h3>
+    <h3 id="comments-title" class="h2">
+      <?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> 条留言', 'bonestheme' ), _n( '<span>%</span> 条留言', '<span>%</span> 条留言', get_comments_number(), 'bonestheme' ) );?>
+    </h3>
 
     <section class="commentlist">
       <?php
@@ -41,7 +43,7 @@ if ( post_password_required() ) {
     <?php endif; ?>
 
     <?php if ( ! comments_open() ) : ?>
-    	<p class="no-comments"><?php _e( 'Comments are closed.' , 'bonestheme' ); ?></p>
+    	<p class="no-comments"><?php _e( '不再开放评论</br>有需要请关注微信公号随意留言' , 'bonestheme' ); ?></p>
     <?php endif; ?>
 
   <?php endif; ?>

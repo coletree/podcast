@@ -35,6 +35,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<!-- <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/mmenu/css/jquery.mmenu.all.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/mmenu/css/extensions/jquery.mmenu.widescreen.css" media="all and (min-width: 1025px)" /> -->
 
 
 <!-- 页面标题 -->
@@ -52,11 +54,9 @@
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-
 	if ( $site_description && ( is_home() || is_front_page() ) )
 		// echo " | $site_description";
 	?>
-	
 </title>
 
 

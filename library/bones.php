@@ -195,7 +195,24 @@ function bones_theme_support() {
 	// adding post format support
 	add_theme_support( 'post-formats',
 		array(
-			'aside',             // title less blurb
+			// 音频：一个音频文件。可以用于播客（podcasting）等
+			'audio', 
+			// 视频：文章中第一个 <video /> 或 object 或 embed 将被作为视频处理。或者，文章可以仅包含视频的 URL，甚至一些主题和插件可以支持自动嵌入您的文章附件中的视频。
+			'video', 
+			// 引语：引用他人的一段话。通常使用 blockquote 来包裹引用内容。或者，可能直接将引语写入文章，并将其出处写在标题栏。
+			'quote',
+			// 状态：简短更新，通常最多 140 个字符。类似于微博 Twitter 状态消息。
+			//'status', 
+			// 单图文：文章中的首个 <img /> 标记将会被认为是该图片。另外，如果文章只包含一个 URL 链接，则被认为是该图片的 URL 地址，而文章标题（post_title）将会作为图片的标题属性。
+			//'image', 
+			// 相册：文章中通常会有“gallery”代码和相应的图像附件。
+			//'gallery', 
+			// 日志
+			// 'aside', 
+			// 链接：链接到其它网站的链接。主题可能会使用文章中的第一个 <a href=""> 标签作为文章的外部链接。有可能有的文章至包含一个 URL，那么这个 URL 将会被使用；同时，文章标题（post_title）将会是附加到它的锚的名称。
+			// 'link', 
+			// 聊天记录:聊天记录
+			// 'chat', 
 		)
 	);
 
@@ -284,6 +301,47 @@ function bones_excerpt_more($more) {
 	// edit here if you like
 	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read ', 'bonestheme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
 }
+
+
+
+
+
+
+/*********************
+获取文章浏览数
+*********************/
+function record_visitors()
+{
+	if (is_singular())
+	{
+		global $post;
+		$post_ID = $post->ID;
+		if($post_ID)
+		{
+			$post_views = (int)get_post_meta($post_ID, 'views', true);
+			if(!update_post_meta($post_ID, 'views', ($post_views+1)))
+			{
+			add_post_meta($post_ID, 'views', 1, true);
+			}
+		}
+	}
+}
+add_action('wp_head', 'record_visitors');
+/// 函数名称：post_views
+/// 函数作用：取得文章的阅读次数
+function post_views($before = '(点击 ', $after = ' 次)', $echo = 1)
+{
+	global $post;
+	$post_ID = $post->ID;
+	$views = (int)get_post_meta($post_ID, 'views', true);
+	if ($echo) echo $before, number_format($views), $after;
+	else return $views;
+}
+
+
+
+
+
 
 
 

@@ -77,35 +77,26 @@
                 </section> <?php // end article section ?>
 
 
-                <footer class="article-footer" id="single-article-footer">
+                <!-- 单篇文章最后 -->
+                <footer class="article-footer cf" id="single-article-footer">
 
-                    <!-- 单篇文章最后 -->
-                    <!-- JiaThis Button BEGIN -->
-                    <div class="jiathis_style">
-                    <a class="jiathis_button_weixin"></a>
-                    <a class="jiathis_button_tsina"></a>
-                    <a class="jiathis_button_douban"></a>
-                    <a class="jiathis_button_twitter"></a>
-                    <a class="jiathis_button_googleplus"></a>
-                    <a href="http://www.jiathis.com/share?uid=1725925" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-                    </div>
-                    <script type="text/javascript" >
-                    var jiathis_config={
-                      data_track_clickback:true,
-                      summary:"",
-                      ralateuid:{
-                        "tsina":"coletree"
-                      },
-                      appkey:{
-                        "tsina":"3982599182"
-                      },
-                      shortUrl:false,
-                      hideMore:true
-                    }
-                    </script>
-                    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1725925" charset="utf-8"></script>
-                    <!-- JiaThis Button END -->
-
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td width="50%" valign="top">
+                        <p>
+                          <img src="<?php echo get_template_directory_uri(); ?>/library/images/qcode_weixin.png">
+                        </p>
+                      </td>
+                      <td width="50%" valign="top">
+                        <p>
+                        <img src="<?php echo get_template_directory_uri(); ?>/library/images/qcode_dashang.png">
+                        </p>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                    
                 </footer> <?php // end article footer ?>
 
 

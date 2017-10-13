@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 Site Name: weblog.coletree.com
 Author:	coletree
@@ -106,232 +107,304 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000311}}
 #inner-header {
   width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000315}}
 #inner-content {
   width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000319}}
 .footer #inner-footer {
   width: 100%;
   padding: 0 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_920max\.scss}line{font-family:\0000324}}
 .footer-last-widget {
   float: left; }
 
 /******************************************************************
-Site Name: weblog.coletree.com
+Site Name: podcast.coletree.com
 Author:	coletree
 
-Stylesheet: Tablet & Small Desktop Stylesheet
-
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
-
+Stylesheet: Tablet & Mobile Stylesheet
 ******************************************************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000314}}
+/*********************
+HEADER 模块
+*********************/
 .header {
-  height: 60px; }
+  height: 40px; }
+  .header #inner-header {
+    height: 40px;
+    width: 100%; }
+    .header #inner-header .site-branding {
+      padding-left: 0;
+      text-align: center;
+      position: relative; }
+      .header #inner-header .site-branding .site-title a {
+        display: inline-block;
+        width: 120px;
+        height: 40px;
+        background: url(../images/logo.png) no-repeat 0 -7px;
+        background-size: 120px 40px;
+        text-decoration: none;
+        line-height: 99em;
+        vertical-align: top;
+        overflow: hidden; }
+    .header #inner-header #navMenuWrap {
+      float: none;
+      margin-top: 80px;
+      padding: 0 20px;
+      display: none;
+      background: #fff; }
+      .header #inner-header #navMenuWrap .nav {
+        float: none;
+        display: block;
+        text-align: center;
+        padding: 0 0 0 0; }
+        .header #inner-header #navMenuWrap .nav li {
+          display: block;
+          float: none;
+          border-top: dotted 1px #c8c2b9; }
+          .header #inner-header #navMenuWrap .nav li a {
+            border-right: 0 none;
+            display: block;
+            font-size: 16px;
+            overflow: hidden;
+            padding: 16px 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000318}}
-#inner-header {
-  width: 100%; }
+#content {
+  padding: 60px 0 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000322}}
-.site-branding {
-  left: 10px;
-  top: -4px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000327}}
-#menuSwitchWrap {
-  display: inline-block; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000331}}
-#navMenuWrap {
-  float: none;
-  margin-top: 80px;
-  padding: 0 20px;
-  display: none;
-  background: #fff; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000341}}
-#inner-header nav .nav {
-  float: none;
-  display: block;
-  text-align: center;
-  padding: 0 0 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000347}}
-  #inner-header nav .nav li {
-    display: block;
-    float: none;
-    border-top: dotted 1px #c8c2b9; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000352}}
-    #inner-header nav .nav li a {
-      border-right: 0 none;
-      display: block;
-      font-size: 16px;
-      overflow: hidden;
-      padding: 16px 20px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000373}}
+/*********************
+单篇文章页面
+*********************/
 .hentry.single-volume {
   width: 100%; }
+  .hentry.single-volume .article-featurePic p {
+    margin-top: -8px; }
+    .hentry.single-volume .article-featurePic p span {
+      font-size: 14px;
+      font-weight: bold;
+      padding: 6px 12px; }
+  .hentry.single-volume .volume-content {
+    font-size: 17px;
+    line-height: 28px;
+    padding: 30px 25px 10px; }
+    .hentry.single-volume .volume-content .article-header .volume-subTitle span.line {
+      display: none; }
+  .hentry.single-volume .volume-playlist {
+    padding: 20px 20px 40px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000377}}
-.volume-subTitle span.line {
-  display: none; }
+.post_view_count {
+  padding: 0 20px 30px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000381}}
-.hentry.single-volume .volume-content {
-  padding: 40px 20px 10px; }
+/******************************************************************
+单篇文章底部关注赞赏
+******************************************************************/
+#single-article-footer {
+  padding: 20px; }
+  #single-article-footer table {
+    width: 100%; }
+    #single-article-footer table p {
+      padding: 10px 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000385}}
-.hentry.single-volume .volume-playlist {
-  padding: 20px 20px 40px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000389}}
-#single-article-footer .left {
-  display: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000393}}
-#single-article-footer .right {
-  border-left: 0 none;
-  float: none;
-  margin: auto; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\0000399}}
-#single-article-footer .jiathis_style {
-  text-align: center; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003106}}
-#subscribeSection.postSubcribe {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  /* Firefox */
-  -webkit-box-sizing: border-box;
-  /* Safari */
-  width: 100%; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003113}}
-#subscribeSection.postSubcribe .subcribeBtns li {
-  padding: 8px 10px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003117}}
-#related_volume {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  /* Firefox */
-  -webkit-box-sizing: border-box;
-  /* Safari */
-  width: 100%; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003124}}
-#related_volume {
-  padding: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003128}}
-#related_volume h4 {
-  padding: 16px 20px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003132}}
-#related_volume li {
-  padding: 20px 20px 20px 160px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003136}}
-#related_volume li .feature-image {
-  left: 20px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003141}}
 .single-volume-comment {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   /* Firefox */
   -webkit-box-sizing: border-box;
   /* Safari */
-  width: 100%; }
+  width: 100%;
+  padding: 0 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003148}}
-.single-volume-comment {
-  padding: 15px 0 30px; }
+#comments-title {
+  padding: 10px 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003160}}
-#footerWidget {
-  padding: 0 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003163}}
-  #footerWidget .widgetTitle {
-    font-size: 16px;
-    font-weight: normal;
-    padding-bottom: 16px;
-    margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003170}}
-  #footerWidget .footer-widget {
-    float: none;
-    display: block;
-    width: 100%;
-    margin-right: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003176}}
-    #footerWidget .footer-widget li {
-      padding: 12px 0 12px 2px;
-      border-bottom: dotted 1px #eeeeee; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003180}}
-      #footerWidget .footer-widget li a {
+.pingback,
+.comment {
+  padding: 20px; }
+
+#related_volume {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto; }
+  #related_volume ul {
+    text-align: left;
+    border: solid 1px #F6F4EF;
+    box-sizing: border-box;
+    background: #fff; }
+  #related_volume h4 {
+    padding: 16px 20px; }
+  #related_volume li {
+    position: relative;
+    padding: 10px 20px 10px 120px;
+    border: solid 1px #F6F4EF;
+    border-width: 1px 0 0;
+    box-sizing: border-box; }
+    #related_volume li a {
+      display: block; }
+    #related_volume li .feature-image {
+      position: absolute;
+      left: 20px;
+      top: 20px; }
+      #related_volume li .feature-image img {
+        width: 80px;
+        height: 60px;
+        vertical-align: top; }
+    #related_volume li .info {
+      padding: 10px 0; }
+      #related_volume li .info h5 {
         font-size: 16px;
-        display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003188}}
-  #footerWidget .footer-last-widget {
-    display: none; }
+        font-weight: bold;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden; }
+      #related_volume li .info .text {
+        font-size: 14px;
+        color: #999;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003197}}
-.footer-bottom .other-links {
-  float: none;
-  text-align: center;
-  padding: 10px 0;
-  margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003203}}
-  .footer-bottom .other-links li {
-    float: none;
-    display: inline-block;
-    margin-left: 0px;
-    padding: 8px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003209}}
-    .footer-bottom .other-links li a {
-      font-size: 14px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003215}}
-.footer-bottom .copyright {
-  float: none;
-  font-size: 14px;
-  text-align: center;
-  padding: 10px 0; }
-
-/*HomePage---------------------------------*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003228}}
-.fullWidthInner {
-  width: 100%; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003232}}
-#subscribeSection .subcribeBtns {
+.signle-showAll {
   display: block;
-  margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  padding: 0 20px 100px; }
+  .signle-showAll a {
+    width: 100%;
+    display: inline-block;
+    padding: 16px 0 12px;
+    border: solid 1px #eee;
+    background: #fff;
+    box-sizing: border-box; }
+    .signle-showAll a:hover {
+      color: #7e6b59;
+      background: #fdfbf8; }
+    .signle-showAll a span {
+      display: inline-block;
+      font-size: 18px;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 0 0 40px;
+      background: url(../images/icon_32.png) 0 -288px no-repeat; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003238}}
-#subscribeSection .subcribeBtns li {
-  border-right: 0 none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003242}}
-#subscribeSection .socialBtns {
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/localsite\/blog\/wp-content\/themes\/podcast4\/library\/scss\/breakpoints\/_760max\.scss}line{font-family:\00003246}}
-#popVolumnSection .popVolumnList ul li {
-  float: none; }
+/*********************
+各类页面样式Page Style
+*********************/
+/*HomePage---------------------------------*/
+#homepage-content {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  margin: 0 auto;
+  padding: 20px 25px 40px;
+  box-sizing: border-box; }
+  #homepage-content .popVolumnList ul {
+    margin-left: 0; }
+    #homepage-content .popVolumnList ul li {
+      float: none;
+      display: block;
+      margin: 0 0 30px;
+      width: 100%;
+      box-sizing: border-box; }
+      #homepage-content .popVolumnList ul li a {
+        display: block;
+        line-height: 1.2; }
+  #homepage-content .popVolumnList .featurePic {
+    width: 100%;
+    height: auto; }
+    #homepage-content .popVolumnList .featurePic img {
+      width: 100%;
+      height: auto; }
+  #homepage-content .popVolumnList .content {
+    height: 180px;
+    padding: 20px;
+    background: #fff;
+    text-align: center; }
+    #homepage-content .popVolumnList .content span {
+      display: inline-block;
+      font-size: 16px;
+      padding: 6px 20px;
+      margin-bottom: 6px; }
+    #homepage-content .popVolumnList .content h3 {
+      margin: 0 0 16px;
+      overflow: hidden; }
+    #homepage-content .popVolumnList .content .listItemSummary {
+      color: #888;
+      font-size: 16px;
+      line-height: 1.6em; }
+    #homepage-content .popVolumnList .content .home-post-time {
+      display: none; }
+  #homepage-content .showAll {
+    text-align: center; }
+    #homepage-content .showAll a {
+      display: block;
+      padding: 16px 40px 12px;
+      border: solid 1px #eee;
+      background: #fff; }
+      #homepage-content .showAll a:hover {
+        color: #7e6b59;
+        background: #fdfbf8; }
+      #homepage-content .showAll a span {
+        display: inline-block;
+        font-size: 18px;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 0 0 40px;
+        background: url(../images/icon_32.png) 0 -288px no-repeat; }
+
+/*存档页---------------------------------*/
+#main.volume-archive-list {
+  padding: 40px 20px; }
+  #main.volume-archive-list h1 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 0 20px;
+    margin-bottom: 10px; }
+  #main.volume-archive-list article {
+    background: #fff;
+    padding: 0;
+    margin-bottom: 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+    -o-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+    -moz-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06);
+    -webkit-box-shadow: 0px 0px 5px rgba(40, 40, 40, 0.06); }
+  #main.volume-archive-list .volume-image-wrap {
+    float: none;
+    padding-right: 0; }
+    #main.volume-archive-list .volume-image-wrap img {
+      width: 100%;
+      height: auto;
+      vertical-align: top; }
+  #main.volume-archive-list .volume-header-wrap {
+    text-align: left;
+    overflow: hidden;
+    padding: 20px; }
+    #main.volume-archive-list .volume-header-wrap .volume-title {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 0 12px; }
+      #main.volume-archive-list .volume-header-wrap .volume-title em {
+        font-size: 12px;
+        color: #fff;
+        display: block;
+        width: 60px;
+        padding: 4px 8px;
+        text-align: center;
+        vertical-align: 2px;
+        margin: 0 8px 16px 0; }
+    #main.volume-archive-list .volume-header-wrap .volume-summary {
+      font-size: 14px;
+      line-height: 1.6em;
+      margin-bottom: 12px; }
+    #main.volume-archive-list .volume-header-wrap .volume-meta {
+      display: none; }
 
 /*
 you can call the larger styles if you want, but there's really no need

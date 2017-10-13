@@ -1,250 +1,463 @@
 /******************************************************************
-Site Name: weblog.coletree.com
+Site Name: podcast.coletree.com
 Author:	coletree
 
-Stylesheet: Tablet & Small Desktop Stylesheet
-
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
-
+Stylesheet: Tablet & Mobile Stylesheet
 ******************************************************************/
-.header {
-    height: 60px;
-}
 
-#inner-header {
-    width: 100%;
-}
 
-.site-branding{
-	left: 10px;
-	top: -4px;
-}
+/*********************
+HEADER 模块
+*********************/
+.header{
+	height: 40px;
 
-#menuSwitchWrap{
-	display: inline-block;
-}
+	#inner-header{
+		height: 40px;
+		width: 100%;
 
-#navMenuWrap{
-	float: none;
-	margin-top: 80px;
-	padding: 0 20px;
-	display: none;
-	background: #fff;
-}
+		.site-branding{
+			padding-left: 0;
+			text-align: center;
+			position: relative;
+			
+			.site-title{
+				a{
+					display: inline-block;
+					width: 120px; 
+					height: 40px; 
+					background:url(../images/logo.png) no-repeat 0 -7px;
+					background-size:120px 40px;
+					text-decoration: none; 
+					line-height: 99em;
+					vertical-align: top;
+					overflow: hidden;
+				}
+			}	
+		}
 
-#inner-header nav{
+		// #menuSwitchWrap{
+		// 	display: inline-block;
 
-	.nav{
-		float: none;
-		display: block;
-		text-align: center;
-		padding: 0 0 0 0;
+		// 	#menuSwitch,
+		// 	#menuSwitch:hover,
+		// 	#menuSwitch:active,
+		// 	#menuSwitch:link,
+		// 	#menuSwitch:visited,
+		// 	#menuSwitch:focus{
+		// 		width: 40px;
+		// 		height: 40px;
+		// 		line-height: 40px;
+		// 		font-size: 24px;
+		// 		cursor: pointer;
+		// 		opacity: 0.6;
+		// 		outline: none;
+		// 	}
+		// }
 
-		li{
-			display: block;
+		#navMenuWrap{
 			float: none;
-			border-top: dotted 1px #c8c2b9;
+			margin-top: 80px;
+			padding: 0 20px;
+			display: none;
+			background: #fff;
 
-			a {
-			border-right: 0 none;
-			display:block;
-			font-size: 16px;
-			overflow: hidden;
-			padding: 16px 20px;
+			.nav{
+				float: none;
+				display: block;
+				text-align: center;
+				padding: 0 0 0 0;
+		
+				li{
+					display: block;
+					float: none;
+					border-top: dotted 1px #c8c2b9;
+		
+					a {
+						border-right: 0 none;
+						display:block;
+						font-size: 16px;
+						overflow: hidden;
+						padding: 16px 20px;
+					}
+		
+				}
+		
 			}
 
 		}
+		
+	}
+	
+}
 
+
+#content{
+	padding: 60px 0 0;
+}
+
+
+
+
+/*********************
+单篇文章页面
+*********************/
+.hentry.single-volume{
+	width: 100%;
+
+	.article-featurePic{
+
+		p{
+			margin-top: -8px;
+
+			span{
+				font-size: 14px;
+				font-weight: bold;
+				padding: 6px 12px;
+			}
+		}
+	}
+
+	.volume-content{
+		font-size: 17px;
+		line-height: 28px;
+		padding: 30px 25px 10px;
+
+		.article-header{
+
+			.volume-subTitle span.line{
+				display: none;
+			}
+		}
+	}
+
+	.volume-playlist{
+		padding: 20px 20px 40px;
 	}
 
 }
 
 
 
-
-
-
-
-
-.hentry.single-volume {
-    width: 100%;
+.post_view_count{
+	padding: 0 20px 30px;
 }
 
-.volume-subTitle span.line{
-	display: none;
-}
 
-.hentry.single-volume .volume-content {
-    padding: 40px 20px 10px;
-}
 
-.hentry.single-volume .volume-playlist {
-    padding: 20px 20px 40px;
-}
-
-#single-article-footer .left{
-	display: none;
-}
-
-#single-article-footer .right {
-    border-left: 0 none;
-    float: none;
-    margin: auto;
-}
-
-#single-article-footer .jiathis_style {
-    text-align: center;
+/******************************************************************
+单篇文章底部关注赞赏
+******************************************************************/
+#single-article-footer{
+	padding: 20px;
+	table{
+		width: 100%;
+		p{
+			padding: 10px 20px;
+		}
+	}
 }
 
 
 
 
-#subscribeSection.postSubcribe {
-    box-sizing:border-box;
-	-moz-box-sizing:border-box; /* Firefox */
-	-webkit-box-sizing:border-box; /* Safari */
-	width:100%;
-}
-
-#subscribeSection.postSubcribe .subcribeBtns li {
-    padding: 8px 10px;
-}
-
-#related_volume {
-    box-sizing:border-box;
-	-moz-box-sizing:border-box; /* Firefox */
-	-webkit-box-sizing:border-box; /* Safari */
-	width:100%;
-}
-
-#related_volume {
-    padding: 0;
-}
-
-#related_volume h4 {
-    padding: 16px 20px;
-}
-
-#related_volume li {
-    padding: 20px 20px 20px 160px;
-}
-
-#related_volume li .feature-image {
-    left: 20px;
-}
-
-
+// 单篇文章的评论和相关文章
 .single-volume-comment{
 	box-sizing:border-box;
 	-moz-box-sizing:border-box; /* Firefox */
 	-webkit-box-sizing:border-box; /* Safari */
 	width:100%;
+	padding:0 20px;
 }
 
-.single-volume-comment {
-    padding: 15px 0 30px;
+#comments-title {
+	padding: 10px 20px;
 }
 
+.pingback,
+.comment {
+	padding: 20px;
+}
 
+#related_volume{
+	width:100%;
+	padding: 20px;
+	box-sizing: border-box;
+	margin: 0 auto;
 
-
-
-
-
-
-
-#footerWidget {
-    padding: 0 40px;
-
-    .widgetTitle {
-		font-size: 16px;
-		font-weight: normal;
-		padding-bottom: 16px;
-		margin-bottom: 0;
+	ul{
+		text-align: left;
+		border: solid 1px #F6F4EF;
+		box-sizing:border-box;
+		background: #fff;
 	}
 
-	.footer-widget {
-		float: none;
-		display: block;
-		width: 100%;
-		margin-right: 0;
+	h4{	
+		padding: 16px 20px;
+	}
 
-		li{
-		    padding: 12px 0 12px 2px;
-		    border-bottom: dotted 1px #EEE;
+	li{
+		position: relative;
+		padding: 10px 20px 10px 120px;
+		border: solid 1px #F6F4EF;
+		border-width: 1px 0 0;
+		box-sizing: border-box;
 
-		    a{
-		    	font-size: 16px;
-		    	display: block;
-		    }
+		a{
+			display: block;
 		}
 
-	}
+		.feature-image{
+			position: absolute;
+			left: 20px;
+			top: 20px;
 
-	.footer-last-widget{
-	    display: none;
-	}
-}
+			img{
+				width: 80px;
+				height: 60px;
+				vertical-align: top;
+			}
 
+		}
 
+		.info{
+			padding: 10px 0;
 
-.footer-bottom{
-    
-    .other-links{
-    	float: none;
-    	text-align: center;
-    	padding: 10px 0;
-    	margin-bottom: 10px;
+			h5{
+				font-size: 16px;
+				font-weight: bold;
+				height: 30px;
+				line-height: 30px;
+				overflow: hidden;
+			}
 
-    	li {
-			float: none;
-			display: inline-block;
-			margin-left: 0px;
-			padding: 8px;
-
-			a{
+			.text{
 				font-size: 14px;
+				color: #999;
+				height: 30px;
+				line-height: 30px;
+				overflow: hidden;
 			}
 		}
-    }
+	}
+}
 
-    .copyright {
-    	float: none;
-    	font-size: 14px;
-    	text-align: center;
-    	padding: 10px 0;
+.signle-showAll{
+	display: block;
+	text-align: center;
+	padding: 0 20px 100px;
+
+	a{
+		width: 100%;
+		display: inline-block;
+		padding: 16px 0 12px;
+		border: solid 1px #eee;
+		background: #fff;
+		box-sizing: border-box;
+
+		&:hover{
+			color: #7e6b59;
+			background: #fdfbf8;
+		};
+
+		span{
+			display: inline-block;
+			font-size: 18px;
+			height: 32px;
+			line-height: 32px;
+			padding: 0 0 0 40px;
+			background: url(../images/icon_32.png) 0 -288px no-repeat;
+		}
 	}
 }
 
 
 
-/*HomePage---------------------------------*/
 
 
-.fullWidthInner{
-	width: 100%;
-}
 
-#subscribeSection .subcribeBtns {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-}
 
-#subscribeSection .subcribeBtns li {
-    border-right: 0 none;
-}
 
-#subscribeSection .socialBtns {
+/*********************
+FOOTER STYLES
+*********************/
+.footer{
 	display: none;
 }
 
-#popVolumnSection .popVolumnList ul li {
-    float: none;
+
+
+
+
+
+
+/*********************
+各类页面样式Page Style
+*********************/
+
+/*HomePage---------------------------------*/
+#homepage-content{
+	width: 100%;
+	max-width: 100%;
+	text-align: left;
+	margin: 0 auto;
+	padding: 20px 25px 40px;
+	box-sizing: border-box;
+
+
+	.popVolumnList{
+
+		ul{
+			margin-left: 0;
+
+			li{
+				float: none;
+				display: block;
+				margin: 0 0 30px;
+				width: 100%;
+				box-sizing: border-box;
+
+				a{
+					display: block;
+					line-height: 1.2;
+				}
+			}
+		}
+
+		.featurePic{
+			width: 100%;
+			height: auto;
+
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.content{
+			height: 180px;
+			padding:20px;
+			background: #fff;
+			text-align: center;
+
+			span{
+				display: inline-block;
+				font-size: 16px;
+				padding: 6px 20px;
+				margin-bottom: 6px;
+			}
+
+			h3{
+				margin: 0 0 16px;
+				overflow: hidden;
+			}
+
+			.listItemSummary{
+				color: #888;
+				font-size: 16px;
+				line-height: 1.6em;
+			}
+
+			.home-post-time{
+				display: none;
+			}
+
+		}
+
+	}
+
+
+	.showAll{
+		text-align: center;
+
+		a{
+			display: block;
+			padding: 16px 40px 12px;
+			border: solid 1px #eee;
+			background: #fff;
+
+			&:hover{
+				color: #7e6b59;
+				background: #fdfbf8;
+			};
+
+			span{
+				display: inline-block;
+				font-size: 18px;
+				height: 32px;
+				line-height: 32px;
+				padding: 0 0 0 40px;
+				background: url(../images/icon_32.png) 0 -288px no-repeat;
+			}
+		}
+	}
 }
 
 
+
+/*存档页---------------------------------*/
+#main.volume-archive-list{
+	padding: 40px 20px;
+
+	h1{
+		font-size: 20px;
+		font-weight: bold;
+		padding:0 0 20px;
+		margin-bottom: 10px;
+	}
+
+	article{
+		background: #fff;
+		padding: 0;
+		margin-bottom: 20px;
+		border: 1px solid #f1f1f1;
+		@include image-shadow(5px);
+	}
+
+	.volume-image-wrap{
+		float: none;
+		padding-right: 0;
+
+		img{
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+
+	}
+
+	.volume-header-wrap{
+		text-align: left;
+		overflow: hidden;
+		padding: 20px;
+
+		.volume-title{
+			font-size: 18px;
+			font-weight: bold;
+			padding: 8px 0 12px;
+
+			em{
+				font-size: 12px;
+				color: #fff;
+				display: block;
+				width: 60px;
+				padding: 4px 8px;
+				text-align: center;
+				vertical-align: 2px;
+				margin:0 8px 16px 0;
+			}
+		}
+
+		.volume-summary{
+			font-size: 14px;
+			line-height: 1.6em;
+			margin-bottom: 12px;
+		}
+
+		.volume-meta{
+			display: none;
+		}
+
+	}
+
+}

@@ -15,169 +15,106 @@
 
 <?php get_header(); ?>
 
+
 	<div id="content">
 
+		<div id="homepage-content">
 
-		<section class="fullWidthSection" id="homeTopSection">
-
-			<div class="fullWidthInner">
+			<div class="popVolumnList">
 				
-				<div id="newVolumnSection">
-
-					<?php $the_query = new WP_Query( 'showposts=1' ); ?>
-
+				<ul class="cf">
+					<?php $the_query = new WP_Query(array( 'orderby' => 'rand', 'showposts' => '9',)); ?>
 					<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 
-					<article class="cf">
-						
-						<div class="volumnContent">
+					<!-- 引言形式 -->
+					<?php if ( has_post_format( 'quote' )) { ?>
+						<li <?php post_class('postListItem'); ?>>
+
+							<a href="<?php the_permalink() ?>">
+
+								<div class="content" style="">
+									<span style="color:<?php the_field('volMainColor'); ?>;">Vol.<?php the_field('volNum'); ?></span>
+									<h3><?php the_title(); ?></h3>
+									<p class="listItemSummary">
+										<?php echo mb_strimwidth(strip_tags(apply_filters('the_excerpt', $post->post_content)), 0, 100,"...");?>
+									</p>
+									<div class="home-post-time"><?php the_time('Y-m-d'); ?></div>
+								</div>
+
+							</a>
 							
-							<header>
-								<p class="volNum" style="color:<?php the_field('volMainColor'); ?>">Vol.&nbsp;<?php the_field('volNum'); ?></p>
-								<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-							</header>
+						</li>
+					<?php 
+					}
 
-							<div class="summary">
-								<?php echo mb_strimwidth(strip_tags(apply_filters('the_excerpt', $post->post_content)), 0, 140,"...");?>
-							</div>
+					// 单图形式
+					else if (has_post_format('image')) { ?>
+						<li <?php post_class('postListItem'); ?>>
 
-						</div>
+							<a href="<?php the_permalink() ?>">
 
-						<div class="feature">
+								<div class="featurePic">
+									<?php if ( has_post_thumbnail()) : ?>
+										<?php the_post_thumbnail('medium'); ?>
+									<?php endif; ?>
+								</div>
+
+								<div class="content" style="">
+									<span style="color:<?php the_field('volMainColor'); ?>;">Vol.<?php the_field('volNum'); ?></span>
+									<h3><?php the_title(); ?></h3>
+									<p class="listItemSummary">
+										<?php echo mb_strimwidth(strip_tags(apply_filters('the_excerpt', $post->post_content)), 0, 100,"...");?>
+									</p>
+									<div class="home-post-time"><?php the_time('Y-m-d'); ?></div>
+								</div>
+
+							</a>
 							
-							<?php if ( has_post_thumbnail()) : ?>
+						</li>
+						<?php 
+					}
 
-							  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-							    <?php the_post_thumbnail('full'); ?>
-							  </a>
-							  
-							<?php endif; ?>
+					else { ?>
+						<li <?php post_class('postListItem'); ?>>
+							<a href="<?php the_permalink() ?>">
 
-						</div>
+								<div class="featurePic">
+									<?php if ( has_post_thumbnail()) : ?>
+										<?php the_post_thumbnail('medium'); ?>
+									<?php endif; ?>
+								</div>
 
-					</article>
+								<div class="content" style="">
+									<span style="color:<?php the_field('volMainColor'); ?>;">Vol.<?php the_field('volNum'); ?></span>
+									<h3><?php the_title(); ?></h3>
+									<p class="listItemSummary">
+										<?php echo mb_strimwidth(strip_tags(apply_filters('the_excerpt', $post->post_content)), 0, 100,"...");?>
+									</p>
+									<div class="home-post-time"><?php the_time('Y-m-d'); ?></div>
+								</div>
+
+							</a>
+						</li>
+						<?php 
+					} ?>
+
+
+
 
 					<?php endwhile;?>
-					
-				</div>
+				</ul>
 
-
-			</div>
-
-		</section>
-
-
-		<section class="fullWidthSection white">
-
-			<div class="fullWidthInner">
-			
-				<div id="popVolumnSection">
-
-					<header class="popVolumnTitle cf">
-
-						<h2>
-							<!-- <span class="section_icon">
-								<img src="<?php bloginfo('template_url'); ?>/library/images/section_icon.png">
-							</span> -->
-							<a href="http://www.coletree.com/podcast/treeradio/">森林广播</a>
-							<span class="section_intro">每月两期更新</span>
-						</h2>
-
-						<div id="radioSubscribe" class="cf">
-
-							<ul class="subcribeBtns">
-
-								<li>
-									<a class="itunes" href="https://itunes.apple.com/cn/podcast/xiao-he-yi-shu-dian-tai/id785370614" target="_blank">iTunes订阅</a>
-								</li>
-
-								<li>
-									<a class="rss" href="http://www.coletree.com/podcast/feed/" target="_blank">RSS订阅</a>
-								</li>
-
-								<li>
-									<a class="email" href="http://eepurl.com/cTYlg" target="_blank">邮件订阅</a>
-								</li>
-
-							</ul>
-
-						</div>
-
-					</header>
-					
-
-					<div class="popVolumnList">
-						
-						<ul class="cf">
-
-							<?php $the_query = new WP_Query(array( 'orderby' => 'rand', 'showposts' => '9',)); ?>
-
-							<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-
-							<li class="">
-
-								<a href="">
-
-									<div class="featurePic">
-
-										<?php if ( has_post_thumbnail()) : ?>
-
-										  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-										    <?php the_post_thumbnail('medium'); ?>
-										  </a>
-
-										<?php endif; ?>
-
-									</div>
-
-									<div class="content" style="border-top:solid 3px <?php the_field('volMainColor'); ?>;">
-										
-										<p style="color:<?php the_field('volMainColor'); ?>;">Vol.<?php the_field('volNum'); ?></p>
-
-										<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
-
-									</div>
-
-								</a>
-								
-							</li>
-
-							<?php endwhile;?>
-							
-						</ul>
-
-						<div class="showAll">
-							
-							<a href="http://www.coletree.com/podcast/treeradio/">
-								<span>查看全部节目&nbsp;<?php echo get_category(1)->count; ?></span>
-							</a>
-
-						</div>
-
-					</div>
-
+				<div class="showAll">
+					<a href="http://www.coletree.com/podcast/treeradio/">
+						<span>查看全部节目&nbsp;<?php echo get_category(1)->count; ?></span>
+					</a>
 				</div>
 
 			</div>
 
-		</section>
-
-
-		<section class="fullWidthSection">
-			
-			<div class="fullWidthInner">
-
-				<div class="home-sideBar">
-
-					<?php get_sidebar(); ?>
-					
-				</div>
-
-			</div>
-
-		</section>
-
+		</div>
 
 	</div>
+
 
 <?php get_footer(); ?>

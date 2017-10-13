@@ -28,18 +28,14 @@
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> >
 
 						<section class="volume-image-wrap">
-							
 							<!-- check if the post has a Post Thumbnail assigned to it. -->
 							<?php if ( has_post_thumbnail()) : ?>
-
 							<div class="feature-image" >
-							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-								<?php the_post_thumbnail('small'); ?>
-							</a>
+								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+									<?php the_post_thumbnail('small'); ?>
+								</a>
 							</div>
-
 							<?php endif; ?>
-
 						</section>
 
 						<header class="volume-header-wrap">
@@ -68,7 +64,7 @@
 
 						<article id="post-not-found" class="hentry cf">
 
-							<h2>没有找到节目，回到首页浏览试试</h2>
+							<h2>没有找到相符节目，回首页看看吧</h2>
 
 						</article>
 
