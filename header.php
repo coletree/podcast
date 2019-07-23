@@ -31,7 +31,12 @@
 <!-- 其他外链 -->
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
+<!-- 原css地址 -->
+<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" /> -->
+<!-- 新css地址 -->
+<link rel="stylesheet" type="text/css" media="all" href="http://www.coletree.com/podcast/wp-content/themes/podcast4/library/css/style.css" />
+
 <!-- <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/mmenu/css/jquery.mmenu.all.css" media="all"/>
 <link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/mmenu/css/extensions/jquery.mmenu.widescreen.css" media="all and (min-width: 1025px)" /> -->
 
